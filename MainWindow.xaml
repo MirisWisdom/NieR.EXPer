@@ -10,8 +10,7 @@
         Width="320"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
-        SnapsToDevicePixels="True"
-        FontFamily="Consolas">
+        SnapsToDevicePixels="True">
     <Window.Background>
         <ImageBrush ImageSource="/Assets/Background.png"/>
     </Window.Background>
@@ -56,7 +55,7 @@
                             </Setter>
                             <Style.Triggers>
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#362f2d"/>
+                                    <Setter Property="Background" Value="#D8362F2D"/>
                                     <Setter Property="Foreground" Value="#D8D0BA"/>
                                 </Trigger>
                             </Style.Triggers>
@@ -191,5 +190,11 @@
                 </Button>
             </Border>
         </StackPanel>
+
+        <Label Content="⸻ Yu:Miris ⸻"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Center"
+               Foreground="#362f2d"
+               FontFamily="Consolas"/>
     </Grid>
 </Window>
