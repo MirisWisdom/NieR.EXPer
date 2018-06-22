@@ -5,8 +5,191 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:YuMi.NieRexper"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="YuMi:NieRexper"
+        Height="480"
+        Width="320"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        SnapsToDevicePixels="True"
+        FontFamily="Consolas">
+    <Window.Background>
+        <ImageBrush ImageSource="/Assets/Background.png"/>
+    </Window.Background>
     <Grid>
-        
+        <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <Label Content="YuMi:NieRexper"
+                   Foreground="#362f2d"
+                   FontSize="32"
+                   FontFamily="Segoe UI Light"/>
+
+            <!-- Level 10 -->
+            <Border BorderThickness="0,2">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="#362f2d"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+
+                <Button Content="⬛ Set EXP to Level 10"
+                        Height="30"
+                        Margin="0,5"
+                        FontSize="16">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#3F362F2D"/>
+                            <Setter Property="Foreground" Value="#362f2d"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="Left"
+                                                              VerticalAlignment="Center"
+                                                              Margin="10,0,0,0"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#362f2d"/>
+                                    <Setter Property="Foreground" Value="#D8D0BA"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Border>
+
+            <!-- Level 25 -->
+            <Border BorderThickness="0,2">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="#362f2d"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+
+                <Button Content="⬛ Set EXP to Level 25"
+                        Height="30"
+                        Margin="0,5"
+                        FontSize="16">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#3F362F2D"/>
+                            <Setter Property="Foreground" Value="#362f2d"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="Left"
+                                                              VerticalAlignment="Center"
+                                                              Margin="10,0,0,0"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#362f2d"/>
+                                    <Setter Property="Foreground" Value="#D8D0BA"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Border>
+
+            <!-- Level 50 -->
+            <Border BorderThickness="0,2">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="#362f2d"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+
+                <Button Content="⬛ Set EXP to Level 50"
+                        Height="30"
+                        Margin="0,5"
+                        FontSize="16">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#3F362F2D"/>
+                            <Setter Property="Foreground" Value="#362f2d"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="Left"
+                                                              VerticalAlignment="Center"
+                                                              Margin="10,0,0,0"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#362f2d"/>
+                                    <Setter Property="Foreground" Value="#D8D0BA"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Border>
+
+            <!-- Level 75 -->
+            <Border BorderThickness="0,2">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="#362f2d"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+
+                <Button Content="⬛ Set EXP to Level 75"
+                        Height="30"
+                        Margin="0,5"
+                        FontSize="16">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#3F362F2D"/>
+                            <Setter Property="Foreground" Value="#362f2d"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="Left"
+                                                              VerticalAlignment="Center"
+                                                              Margin="10,0,0,0"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#362f2d"/>
+                                    <Setter Property="Foreground" Value="#D8D0BA"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Border>
+        </StackPanel>
     </Grid>
 </Window>
