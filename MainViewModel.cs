@@ -3,6 +3,7 @@ using System;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
+using YuMi.NieRexper.Common;
 
 namespace YuMi.NieRexper
 {

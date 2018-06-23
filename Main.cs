@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using YuMi.NieRexper.Common;
 
 namespace YuMi.NieRexper
 {

@@ -1,4 +1,4 @@
-﻿namespace YuMi.NieRexper
+﻿namespace YuMi.NieRexper.Common
 {
     /// <summary>
     /// Result-compliant wrapper for the LevelApplyStatus and Data string.
