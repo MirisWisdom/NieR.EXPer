@@ -53,9 +53,9 @@ namespace YuMi.NieRexper
             if (openFileDialog.ShowDialog() == true)
             {
                 var fileName = openFileDialog.FileName;
+                var copyName = GetUniqueSlotName(fileName);
 
-                // "SlotData_0.dat" -> "SlotData_0.dat - 53a41e95"
-                File.Copy(fileName, $"{fileName} - {Guid.NewGuid().ToString().Substring(0, 8)}", true);
+                File.Copy(fileName, copyName, true);
 
                 var result = main.Apply(amount, fileName);
 
@@ -68,6 +68,18 @@ namespace YuMi.NieRexper
                     statusText = result.Data;
                 }
             }
+        }
+
+        /// <summary>
+        /// Returns the inbound save slot's file name with an unique string padded into it.
+        /// </summary>
+        /// <param name="fileName">Absolute path, e.g. C:\SlotData_0.dat</param>
+        /// <returns>Unique..ified... save slot file name, e.g. C:\SlotData_0_5d8fe167.dat</returns>
+        string GetUniqueSlotName(string fileName)
+        {
+            var fileNameNoExtension = fileName.Substring(0, fileName.Length - 4);
+            var guidWithFirst8Chars = Guid.NewGuid().ToString().Substring(0, 8);
+            return $"{fileNameNoExtension}-{guidWithFirst8Chars}.dat";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -24,4 +24,4 @@ Once you reach level 50+, the game's difficulty becomes rather trivial. To bring
 2. Click on whichever level you want to be, and in the pop-up window, select your save file.
    - The folder for the N:A saves is located at `Documents\My Games\NieR_Automata`.
 3. If all worked, you should see `Status: SUCCESS` in the window!
-   - The tool will make a backup of your original save with `~` as a suffix. e.g. `SlotData_0.dat~`.
+   - The tool will make a backup of your original save with a random string appended to its name; e.g. `SlotData_0-5d8fe167.dat`.
