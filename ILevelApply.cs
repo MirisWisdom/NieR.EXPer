@@ -1,9 +1,7 @@
-﻿using System;
-
-namespace YuMi.NieRexper
+﻿namespace YuMi.NieRexper
 {
     public interface ILevelApply
     {
-        LevelApplyResult Apply(UInt32 amount, String path);
+        LevelApplyResult Apply(int amount, string path);
     }
 }

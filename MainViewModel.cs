@@ -15,7 +15,7 @@ namespace YuMi.NieRexper
             }
         }
 
-        public void ApplyEXP(UInt32 amount)
+        public void ApplyEXP(int amount)
         {
             var openFileDialog = new OpenFileDialog()
             {

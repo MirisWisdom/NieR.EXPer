@@ -6,26 +6,26 @@ namespace YuMi.NieRexper
     public class Main : ILevelApply
     {
         int Address {
-            get { return 0x0003871C; }
+            get { return 0x3871C; }
         }
 
-        public static UInt32 Level10 {
+        public static int Level10 {
             get { return 0x00C70; }
         }
 
-        public static UInt32 Level25 {
+        public static int Level25 {
             get { return 0x086BD; }
         }
 
-        public static UInt32 Level50 {
+        public static int Level50 {
             get { return 0x330E7; }
         }
 
-        public static UInt32 Level75 {
+        public static int Level75 {
             get { return 0x92847; }
         }
 
-        public LevelApplyResult Apply(UInt32 amount, String path)
+        public LevelApplyResult Apply(int amount, string path)
         {
             try
             {
