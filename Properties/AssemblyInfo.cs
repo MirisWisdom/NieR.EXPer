@@ -7,11 +7,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("YuMi.NieRexper")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("YuMi:NieRexper")]
+[assembly: AssemblyDescription("EXP/Level Modifier for NieR:Automata")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("YuMi.NieRexper")]
+[assembly: AssemblyCompany("Yu:Miris")]
+[assembly: AssemblyProduct("YuMi:NieRexper")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
