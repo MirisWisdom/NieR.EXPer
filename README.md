@@ -3,7 +3,7 @@
 	<img src="https://user-images.githubusercontent.com/10241434/41805183-6a64c330-76d7-11e8-8d9a-457d11de156e.png"/>
  <br><br>
  Level Patcher for NieR:Automata
-</p
+</p>
 
 # Introduction
 
