@@ -52,7 +52,12 @@ namespace YuMi.NieRexper
 
             if (openFileDialog.ShowDialog() == true)
             {
-                var result = main.Apply(amount, openFileDialog.FileName);
+                var fileName = openFileDialog.FileName;
+
+                // "SlotData_0.dat" -> "SlotData_0.dat - 53a41e95"
+                File.Copy(fileName, $"{fileName} - {Guid.NewGuid().ToString().Substring(0, 8)}", true);
+
+                var result = main.Apply(amount, fileName);
 
                 if (result.Status == LevelApplyStatus.Success)
                 {
