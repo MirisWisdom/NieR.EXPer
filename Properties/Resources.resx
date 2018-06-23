@@ -126,4 +126,10 @@
   <data name="SavesFilter" xml:space="preserve">
     <value>N:A Saves (SlotData_*.dat)|SlotData_*.dat</value>
   </data>
+  <data name="StatusAwaiting" xml:space="preserve">
+    <value>AWAITING</value>
+  </data>
+  <data name="StatusSuccess" xml:space="preserve">
+    <value>SUCCESS</value>
+  </data>
 </root>

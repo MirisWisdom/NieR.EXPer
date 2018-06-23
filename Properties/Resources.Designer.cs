@@ -86,5 +86,23 @@ namespace YuMi.NieRexper.Properties {
                 return ResourceManager.GetString("SavesFilter", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AWAITING.
+        /// </summary>
+        internal static string StatusAwaiting {
+            get {
+                return ResourceManager.GetString("StatusAwaiting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SUCCESS.
+        /// </summary>
+        internal static string StatusSuccess {
+            get {
+                return ResourceManager.GetString("StatusSuccess", resourceCulture);
+            }
+        }
     }
 }
