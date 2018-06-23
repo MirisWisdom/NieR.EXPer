@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace YuMi.NieRexper
 {
@@ -20,9 +7,32 @@ namespace YuMi.NieRexper
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainViewModel viewModel = new MainViewModel();
+
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = viewModel;
+        }
+
+        void ApplyLevel10(object sender, RoutedEventArgs e)
+        {
+            viewModel.ApplyEXP(Main.Level10);
+        }
+
+        void ApplyLevel25(object sender, RoutedEventArgs e)
+        {
+            viewModel.ApplyEXP(Main.Level25);
+        }
+
+        void ApplyLevel50(object sender, RoutedEventArgs e)
+        {
+            viewModel.ApplyEXP(Main.Level50);
+        }
+
+        void ApplyLevel75(object sender, RoutedEventArgs e)
+        {
+            viewModel.ApplyEXP(Main.Level75);
         }
     }
 }

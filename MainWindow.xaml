@@ -37,7 +37,7 @@
                 <Button Content="⬛ Set EXP to Level 10"
                         Height="30"
                         Margin="0,5"
-                        FontSize="16">
+                        FontSize="16" Click="ApplyLevel10">
                     <Button.Style>
                         <Style TargetType="{x:Type Button}">
                             <Setter Property="Background" Value="#3F362F2D"/>
@@ -79,7 +79,7 @@
                 <Button Content="⬛ Set EXP to Level 25"
                         Height="30"
                         Margin="0,5"
-                        FontSize="16">
+                        FontSize="16" Click="ApplyLevel25">
                     <Button.Style>
                         <Style TargetType="{x:Type Button}">
                             <Setter Property="Background" Value="#3F362F2D"/>
@@ -121,7 +121,7 @@
                 <Button Content="⬛ Set EXP to Level 50"
                         Height="30"
                         Margin="0,5"
-                        FontSize="16">
+                        FontSize="16" Click="ApplyLevel50">
                     <Button.Style>
                         <Style TargetType="{x:Type Button}">
                             <Setter Property="Background" Value="#3F362F2D"/>
@@ -163,7 +163,7 @@
                 <Button Content="⬛ Set EXP to Level 75"
                         Height="30"
                         Margin="0,5"
-                        FontSize="16">
+                        FontSize="16" Click="ApplyLevel75">
                     <Button.Style>
                         <Style TargetType="{x:Type Button}">
                             <Setter Property="Background" Value="#3F362F2D"/>
