@@ -12,6 +12,9 @@ namespace YuMi.NieRexper
 
         string statusText = Properties.Resources.StatusAwaiting;
 
+        /// <summary>
+        /// Full path for the NieR:Automata saves directory: Documents\My Games\NieR_Automata
+        /// </summary>
         string SavesDirectory {
             get {
                 var myDocs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -19,6 +22,9 @@ namespace YuMi.NieRexper
             }
         }
 
+        /// <summary>
+        /// Text representation of the outcome status.
+        /// </summary>
         public string StatusText {
             get {
                 return statusText;
@@ -32,6 +38,10 @@ namespace YuMi.NieRexper
             }
         }
 
+        /// <summary>
+        /// Prompt the user with a dialogue window to choose their save slot and apply the specified EXP value.
+        /// </summary>
+        /// <param name="amount">Amount of EXP to apply to the save slot the user will choose.</param>
         public void ApplyEXP(int amount)
         {
             var openFileDialog = new OpenFileDialog()
