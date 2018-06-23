@@ -11,7 +11,7 @@ namespace YuMi.NieRexper
         string SavesDirectory {
             get {
                 var myDocs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                return Path.Combine(myDocs, "My Games", "NieR_Automata");
+                return Path.Combine(myDocs, Properties.Resources.GamesDirectory, Properties.Resources.SavesDirectory);
             }
         }
 
@@ -20,7 +20,7 @@ namespace YuMi.NieRexper
             var openFileDialog = new OpenFileDialog()
             {
                 InitialDirectory = SavesDirectory,
-                Filter = "N:A Saves (SlotData_*.dat)|SlotData_*.dat"
+                Filter = Properties.Resources.SavesFilter
             };
 
             if (openFileDialog.ShowDialog() == true)
