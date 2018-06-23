@@ -10,7 +10,7 @@
         Width="320"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
-        SnapsToDevicePixels="True">
+        SnapsToDevicePixels="True" Icon="Assets/icon.ico">
     <Window.Background>
         <ImageBrush ImageSource="/Assets/Background.png"/>
     </Window.Background>
