@@ -1,4 +1,6 @@
-﻿using YuMi.NieRexper.Apply;
+﻿using System;
+using System.IO;
+using YuMi.NieRexper.Apply;
 using YuMi.NieRexper.Apply.Common;
 
 namespace YuMi.NieRexper.UI
@@ -40,11 +42,24 @@ namespace YuMi.NieRexper.UI
         /// Apply experience points to the specified save file.
         /// </summary>
         /// <param name="amount">Amount of EXP.</param>
-        /// <param name="path">Save file location.</param>
+        /// <param name="slotName">Save file location.</param>
         /// <returns>Result object representing the outcome of the patch procedure.</returns>
-        public PatchResult Apply(int amount, string path)
+        public PatchResult PatchSlot(string slotName, int amount)
         {
-            return new SlotPatch(path).Patch(amount);
+            File.Copy(slotName, GetUniqueSlotName(slotName), true);
+            return new SlotPatch(slotName).Patch(amount);
+        }
+
+        /// <summary>
+        /// Returns the inbound save slot's file name with an unique string padded into it.
+        /// </summary>
+        /// <param name="fileName">Absolute slotName, e.g. C:\SlotData_0.dat</param>
+        /// <returns>Unique..ified... save slot file name, e.g. C:\SlotData_0_5d8fe167.dat</returns>
+        string GetUniqueSlotName(string fileName)
+        {
+            var fileNameNoExtension = fileName.Substring(0, fileName.Length - 4);
+            var guidWithFirst8Chars = Guid.NewGuid().ToString().Substring(0, 8);
+            return $"{fileNameNoExtension}-{guidWithFirst8Chars}.dat";
         }
     }
 }
