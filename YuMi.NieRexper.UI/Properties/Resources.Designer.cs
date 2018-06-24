@@ -88,6 +88,33 @@ namespace YuMi.NieRexper.UI.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SlotData_0.dat.
+        /// </summary>
+        internal static string SlotData0 {
+            get {
+                return ResourceManager.GetString("SlotData0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SlotData_1.dat.
+        /// </summary>
+        internal static string SlotData1 {
+            get {
+                return ResourceManager.GetString("SlotData1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SlotData_2.dat.
+        /// </summary>
+        internal static string SlotData2 {
+            get {
+                return ResourceManager.GetString("SlotData2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to AWAITING.
         /// </summary>
         internal static string StatusAwaiting {

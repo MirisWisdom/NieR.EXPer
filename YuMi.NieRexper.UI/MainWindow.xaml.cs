@@ -34,5 +34,20 @@ namespace YuMi.NieRexper.UI
         {
             viewModel.ApplyEXP(Main.Level75);
         }
+
+        void SelectSlot0(object sender, RoutedEventArgs e)
+        {
+            viewModel.SlotFile = Properties.Resources.SlotData0;
+        }
+
+        void SelectSlot1(object sender, RoutedEventArgs e)
+        {
+            viewModel.SlotFile = Properties.Resources.SlotData1;
+        }
+
+        void SelectSlot2(object sender, RoutedEventArgs e)
+        {
+            viewModel.SlotFile = Properties.Resources.SlotData2;
+        }
     }
 }
