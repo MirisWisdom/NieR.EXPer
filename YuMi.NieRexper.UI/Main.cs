@@ -1,21 +1,15 @@
 ﻿using System;
 using System.IO;
-using YuMi.NieRexper.Common;
+using YuMi.NieRexper.Apply;
+using YuMi.NieRexper.Apply.Common;
 
-namespace YuMi.NieRexper
+namespace YuMi.NieRexper.UI
 {
     /// <summary>
     /// Model that implements the ILevelApply interface and exposes integer values for various NieR:Automata levels.
     /// </summary>
-    public class Main : ILevelApply
+    public class Main
     {
-        /// <summary>
-        /// Offset in the save binary where the EXP value is stored.
-        /// </summary>
-        int Address {
-            get { return 0x3871C; }
-        }
-
         /// <summary>
         /// EXP required to reach level 10.
         /// </summary>
@@ -48,25 +42,24 @@ namespace YuMi.NieRexper
         /// Apply experience points to the specified save file.
         /// </summary>
         /// <param name="amount">Amount of EXP.</param>
-        /// <param name="path">Save file location.</param>
+        /// <param name="slotName">Save file location.</param>
         /// <returns>Result object representing the outcome of the patch procedure.</returns>
-        public LevelApplyResult Apply(int amount, string path)
+        public PatchResult PatchSlot(string slotName, int amount)
         {
-            try
-            {
-                using (var writer = new BinaryWriter(File.OpenWrite(path)))
-                {
-                    var value = BitConverter.GetBytes(amount);
-                    writer.BaseStream.Seek(Address, SeekOrigin.Begin);
-                    writer.Write(value, 0, value.Length);
+            File.Copy(slotName, GetUniqueSlotName(slotName), true);
+            return new SlotPatch(slotName).Patch(amount);
+        }
 
-                    return new LevelApplyResult(LevelApplyStatus.Success);
-                }
-            }
-            catch (Exception e)
-            {
-                return new LevelApplyResult(LevelApplyStatus.Exception, e.Message);
-            }
+        /// <summary>
+        /// Returns the inbound save slot's file name with an unique string padded into it.
+        /// </summary>
+        /// <param name="fileName">Absolute slotName, e.g. C:\SlotData_0.dat</param>
+        /// <returns>Unique..ified... save slot file name, e.g. C:\SlotData_0_5d8fe167.dat</returns>
+        string GetUniqueSlotName(string fileName)
+        {
+            var fileNameNoExtension = fileName.Substring(0, fileName.Length - 4);
+            var guidWithFirst8Chars = Guid.NewGuid().ToString().Substring(0, 8);
+            return $"{fileNameNoExtension}-{guidWithFirst8Chars}.dat";
         }
     }
 }

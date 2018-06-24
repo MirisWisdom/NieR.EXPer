@@ -1,9 +1,6 @@
-﻿namespace YuMi.NieRexper.Common
+﻿namespace YuMi.NieRexper.Apply.Common
 {
-    /// <summary>
-    /// Enum for representing the outcome of applying a level of choice to the save file.
-    /// </summary>
-    public enum LevelApplyStatus
+    public enum PatchStatus
     {
         /// <summary>
         /// The amount of EXP required for the chosen level has been successfully applied.

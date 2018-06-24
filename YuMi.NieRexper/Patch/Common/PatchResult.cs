@@ -1,14 +1,14 @@
-﻿namespace YuMi.NieRexper.Common
+﻿namespace YuMi.NieRexper.Apply.Common
 {
     /// <summary>
-    /// Result-compliant wrapper for the LevelApplyStatus and Data string.
+    /// Enum for representing the outcome of applying a level of choice to the save file.
     /// </summary>
-    public class LevelApplyResult
+    public class PatchResult
     {
         /// <summary>
         /// Outcome of the EXP patching to the save file.
         /// </summary>
-        public LevelApplyStatus Status { get; }
+        public PatchStatus Status { get; }
 
         /// <summary>
         /// Optional data, e.g. exception messages.
@@ -20,7 +20,7 @@
         /// </summary>
         /// <param name="status">Outcome of the EXP patching to the save file.</param>
         /// <param name="data">Optional data, e.g. exception messages.</param>
-        public LevelApplyResult(LevelApplyStatus status, string data = null)
+        public PatchResult(PatchStatus status, string data = null)
         {
             Status = status;
             Data = data;
