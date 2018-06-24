@@ -2,6 +2,7 @@
 using System.IO;
 using YuMi.NieRexper.Apply;
 using YuMi.NieRexper.Apply.Common;
+using YuMi.NieRexper.Calculate;
 
 namespace YuMi.NieRexper.UI
 {
@@ -14,28 +15,36 @@ namespace YuMi.NieRexper.UI
         /// EXP required to reach level 10.
         /// </summary>
         public static int Level10 {
-            get { return 0x00C70; }
+            get {
+                return new ExpCalculate().Calculate(10);
+            }
         }
 
         /// <summary>
         /// EXP required to reach level 25.
         /// </summary>
         public static int Level25 {
-            get { return 0x086BD; }
+            get {
+                return new ExpCalculate().Calculate(25);
+            }
         }
 
         /// <summary>
         /// EXP required to reach level 50.
         /// </summary>
         public static int Level50 {
-            get { return 0x330E7; }
+            get {
+                return new ExpCalculate().Calculate(50);
+            }
         }
 
         /// <summary>
         /// EXP required to reach level 75.
         /// </summary>
         public static int Level75 {
-            get { return 0x92847; }
+            get {
+                return new ExpCalculate().Calculate(75);
+            }
         }
 
         /// <summary>

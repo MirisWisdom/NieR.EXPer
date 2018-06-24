@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuMi.NieRexper.UI", "YuMi.N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuMi.NieRexper", "YuMi.NieRexper\YuMi.NieRexper.csproj", "{F13F25D9-4DF8-4193-ADB5-32486EB9ED9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuMi.NieRexper.Test", "YuMi.NieRexper.Test\YuMi.NieRexper.Test.csproj", "{B2AE6DBB-B2F5-4544-8AFD-D49626B2BFE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F13F25D9-4DF8-4193-ADB5-32486EB9ED9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F13F25D9-4DF8-4193-ADB5-32486EB9ED9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F13F25D9-4DF8-4193-ADB5-32486EB9ED9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2AE6DBB-B2F5-4544-8AFD-D49626B2BFE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2AE6DBB-B2F5-4544-8AFD-D49626B2BFE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2AE6DBB-B2F5-4544-8AFD-D49626B2BFE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2AE6DBB-B2F5-4544-8AFD-D49626B2BFE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
