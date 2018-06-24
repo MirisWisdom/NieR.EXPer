@@ -149,12 +149,10 @@
                         </Button>
                     </Border>
 
-                    <!-- Custom -->
-                    <StackPanel>
-                        <Label Content="Custom Level:"
+                    <Label Content="Custom Level:"
                                Padding="0,5"/>
 
-                        <TextBox BorderThickness="0"
+                    <TextBox BorderThickness="0"
                                  BorderBrush="#362f2d"
                                  Text="{Binding CustomLevel}"
                                  Height="30"
@@ -165,12 +163,11 @@
                                  Background="#3F362F2D"
                                  Foreground="#362f2d"/>
 
-                        <Border Margin="0,5">
-                            <Button Content="⬛ Set Custom Level"
+                    <Border Margin="0,5">
+                        <Button Content="⬛ Set Custom Level"
                                     Click="ApplyCustomLevel">
-                            </Button>
-                        </Border>
-                    </StackPanel>
+                        </Button>
+                    </Border>
 
                     <!-- Selected Slot -->
                     <Grid Margin="0,15,0,0">

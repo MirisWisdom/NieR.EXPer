@@ -6,7 +6,7 @@
     public class ExpCalculate : ICalculate
     {
         /// <summary>
-        /// Array of EXP that correspond to levels 1-99.
+        /// Array of EXPs that correspond to levels 1-99.
         /// </summary>
         int[] expValues =
         {
@@ -29,7 +29,7 @@
         /// <returns>The EXP required for the provided level.</returns>
         public int Calculate(int value)
         {
-            return expValues[value - 0x1];
+            return expValues[value - 1];
         }
     }
 }
