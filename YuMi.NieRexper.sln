@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuMi.NieRexper", "YuMi.NieRexper.csproj", "{390664BD-4CB7-48B7-B3EE-D153A54FDBCB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuMi.NieRexper", "YuMi.NieRexper\YuMi.NieRexper.csproj", "{4880BEA1-284F-476B-B919-D4C59D24B26A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{390664BD-4CB7-48B7-B3EE-D153A54FDBCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{390664BD-4CB7-48B7-B3EE-D153A54FDBCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{390664BD-4CB7-48B7-B3EE-D153A54FDBCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{390664BD-4CB7-48B7-B3EE-D153A54FDBCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4880BEA1-284F-476B-B919-D4C59D24B26A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4880BEA1-284F-476B-B919-D4C59D24B26A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4880BEA1-284F-476B-B919-D4C59D24B26A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4880BEA1-284F-476B-B919-D4C59D24B26A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {BB21B477-0C22-4D34-B258-97727657B627}
+		SolutionGuid = {9FDE89CB-85A0-4A8F-9A97-D8265173E5E2}
 	EndGlobalSection
 EndGlobal
