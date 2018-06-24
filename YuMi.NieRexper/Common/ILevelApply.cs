@@ -1,4 +1,4 @@
-﻿namespace YuMi.NieRexper.Common
+﻿namespace YuMi.NieRexper.UI.Common
 {
     /// <summary>
     /// Interface to be implemented by objects that apply experients points.

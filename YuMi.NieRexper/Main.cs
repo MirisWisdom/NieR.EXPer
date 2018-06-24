@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
-using YuMi.NieRexper.Common;
+using YuMi.NieRexper.UI.Common;
 
-namespace YuMi.NieRexper
+namespace YuMi.NieRexper.UI
 {
     /// <summary>
     /// Model that implements the ILevelApply interface and exposes integer values for various NieR:Automata levels.

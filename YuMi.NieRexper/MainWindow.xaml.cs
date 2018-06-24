@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace YuMi.NieRexper
+namespace YuMi.NieRexper.UI
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

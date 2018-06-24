@@ -1,11 +1,11 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
-using YuMi.NieRexper.Common;
+using Microsoft.Win32;
+using YuMi.NieRexper.UI.Common;
 
-namespace YuMi.NieRexper
+namespace YuMi.NieRexper.UI
 {
     public class MainViewModel : INotifyPropertyChanged
     {
