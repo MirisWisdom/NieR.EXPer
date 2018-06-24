@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculate\ExpCalculate.cs" />
+    <Compile Include="Calculate\ICalculate.cs" />
     <Compile Include="Patch\Common\PatchResult.cs" />
     <Compile Include="Patch\Common\PatchStatus.cs" />
     <Compile Include="Patch\IPatch.cs" />
