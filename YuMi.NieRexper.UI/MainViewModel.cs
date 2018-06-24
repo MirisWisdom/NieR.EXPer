@@ -4,6 +4,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using YuMi.NieRexper.Apply.Common;
+using YuMi.NieRexper.Calculate;
 
 namespace YuMi.NieRexper.UI
 {
@@ -14,6 +15,8 @@ namespace YuMi.NieRexper.UI
         string statusText = Properties.Resources.StatusAwaiting;
 
         string slotFile = string.Empty;
+
+        uint customLevel = 25;
 
         Visibility slotsGridVisibility = Visibility.Visible;
 
@@ -59,6 +62,22 @@ namespace YuMi.NieRexper.UI
                     NotifyPropertyChanged();
                     SlotsGridVisibility = Visibility.Collapsed;
                     LevelsGridVisibility = Visibility.Visible;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Property representing the custom level typed by the user.
+        /// </summary>
+        public uint CustomLevel {
+            get {
+                return customLevel;
+            }
+            set {
+                if (value != customLevel)
+                {
+                    customLevel = value;
+                    NotifyPropertyChanged();
                 }
             }
         }
@@ -133,6 +152,14 @@ namespace YuMi.NieRexper.UI
             StatusText = result.Status == PatchStatus.Success
                 ? Properties.Resources.StatusSuccess
                 : result.Data;
+        }
+
+        /// <summary>
+        /// Calls ApplyEXP that with the CustomLevel's value as the argument.
+        /// </summary>
+        public void ApplyCustomLevel()
+        {
+            ApplyEXP(new ExpCalculate().Calculate((int)CustomLevel));
         }
 
         /// <summary>

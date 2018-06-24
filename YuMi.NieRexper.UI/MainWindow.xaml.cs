@@ -49,5 +49,10 @@ namespace YuMi.NieRexper.UI
         {
             viewModel.SlotFile = Properties.Resources.SlotData2;
         }
+
+        void ApplyCustomLevel(object sender, RoutedEventArgs e)
+        {
+            viewModel.ApplyCustomLevel();
+        }
     }
 }

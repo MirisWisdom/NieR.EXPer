@@ -19,7 +19,7 @@
     </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="120"/>
+            <RowDefinition Height="115"/>
             <RowDefinition/>
             <RowDefinition Height="75"/>
         </Grid.RowDefinitions>
@@ -34,7 +34,7 @@
 
         <Grid Grid.Row="1">
             <!-- Slot Selection -->
-            <Grid Visibility="{Binding LevelsGridVisibility}">
+            <Grid Visibility="{Binding SlotsGridVisibility}">
                 <StackPanel VerticalAlignment="Center"
                             HorizontalAlignment="Center">
                     <!-- Slot 0 -->
@@ -169,7 +169,7 @@
             </Grid>
 
             <!-- Level Selection -->
-            <Grid Visibility="{Binding SlotsGridVisibility}">
+            <Grid Visibility="{Binding LevelsGridVisibility}">
                 <StackPanel VerticalAlignment="Center"
                             HorizontalAlignment="Center">
                     <!-- Level 10 -->
@@ -347,7 +347,7 @@
 
                         <TextBox BorderThickness="0"
                                  BorderBrush="#362f2d"
-                                 Text="25"
+                                 Text="{Binding CustomLevel}"
                                  Height="30"
                                  HorizontalContentAlignment="Center"
                                  VerticalContentAlignment="Center"
@@ -372,7 +372,7 @@
                             <Button Content="⬛ Set Custom Level"
                                 Height="30"
                                 Margin="0,5"
-                                FontSize="16" Click="ApplyLevel75">
+                                FontSize="16" Click="ApplyCustomLevel">
                                 <Button.Style>
                                     <Style TargetType="{x:Type Button}">
                                         <Setter Property="Background" Value="#3F362F2D"/>
