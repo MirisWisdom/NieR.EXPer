@@ -40,7 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Patch\Common\PatchResult.cs" />
+    <Compile Include="Patch\Common\PatchStatus.cs" />
+    <Compile Include="Patch\IPatch.cs" />
+    <Compile Include="Patch\SlotPatch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
