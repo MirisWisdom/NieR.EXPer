@@ -108,5 +108,11 @@
   <ItemGroup>
     <Resource Include="Assets\icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YuMi.NieRexper\YuMi.NieRexper.csproj">
+      <Project>{F13F25D9-4DF8-4193-ADB5-32486EB9ED9A}</Project>
+      <Name>YuMi.NieRexper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

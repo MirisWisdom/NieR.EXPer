@@ -1,5 +1,6 @@
 ﻿using System;
-using System.IO;
+using YuMi.NieRexper.Apply;
+using YuMi.NieRexper.Apply.Common;
 using YuMi.NieRexper.UI.Common;
 
 namespace YuMi.NieRexper.UI
@@ -9,13 +10,6 @@ namespace YuMi.NieRexper.UI
     /// </summary>
     public class Main : ILevelApply
     {
-        /// <summary>
-        /// Offset in the save binary where the EXP value is stored.
-        /// </summary>
-        int Address {
-            get { return 0x3871C; }
-        }
-
         /// <summary>
         /// EXP required to reach level 10.
         /// </summary>
@@ -52,20 +46,17 @@ namespace YuMi.NieRexper.UI
         /// <returns>Result object representing the outcome of the patch procedure.</returns>
         public LevelApplyResult Apply(int amount, string path)
         {
-            try
-            {
-                using (var writer = new BinaryWriter(File.OpenWrite(path)))
-                {
-                    var value = BitConverter.GetBytes(amount);
-                    writer.BaseStream.Seek(Address, SeekOrigin.Begin);
-                    writer.Write(value, 0, value.Length);
+            var slotPatch = new SlotPatch(path);
+            var result = slotPatch.Patch(amount);
 
-                    return new LevelApplyResult(LevelApplyStatus.Success);
-                }
-            }
-            catch (Exception e)
+            switch (result.Status)
             {
-                return new LevelApplyResult(LevelApplyStatus.Exception, e.Message);
+                case PatchStatus.Success:
+                    return new LevelApplyResult(LevelApplyStatus.Success);
+                case PatchStatus.Exception:
+                    return new LevelApplyResult(LevelApplyStatus.Exception, result.Data);
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
     }
