@@ -1,4 +1,4 @@
-﻿namespace YuMi.NieRexper.Apply.Common
+﻿namespace YuMi.NieRexper.Patch.Common
 {
     public enum PatchStatus
     {

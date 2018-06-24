@@ -1,4 +1,4 @@
-﻿namespace YuMi.NieRexper.Apply.Common
+﻿namespace YuMi.NieRexper.Patch.Common
 {
     /// <summary>
     /// Enum for representing the outcome of applying a level of choice to the save file.

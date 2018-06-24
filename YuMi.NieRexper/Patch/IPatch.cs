@@ -1,6 +1,6 @@
-﻿using YuMi.NieRexper.Apply.Common;
+﻿using YuMi.NieRexper.Patch.Common;
 
-namespace YuMi.NieRexper.Apply
+namespace YuMi.NieRexper.Patch
 {
     /// <summary>
     /// Interface to be implemented by NieR:Automata EXP patchers.

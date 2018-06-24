@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
-using YuMi.NieRexper.Apply;
-using YuMi.NieRexper.Apply.Common;
+using YuMi.NieRexper.Patch;
+using YuMi.NieRexper.Patch.Common;
 using YuMi.NieRexper.Calculate;
 
 namespace YuMi.NieRexper.UI

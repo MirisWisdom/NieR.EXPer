@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using YuMi.NieRexper.Apply.Common;
+using YuMi.NieRexper.Patch.Common;
 using YuMi.NieRexper.Calculate;
 
 namespace YuMi.NieRexper.UI

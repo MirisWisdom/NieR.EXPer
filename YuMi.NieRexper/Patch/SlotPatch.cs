@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
-using YuMi.NieRexper.Apply.Common;
+using YuMi.NieRexper.Patch.Common;
 
-namespace YuMi.NieRexper.Apply
+namespace YuMi.NieRexper.Patch
 {
     /// <summary>
     /// EXP patcher for NieR:Automata save slots.
