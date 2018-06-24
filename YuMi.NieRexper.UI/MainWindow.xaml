@@ -10,13 +10,56 @@
         Width="320"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
-        SnapsToDevicePixels="True" Icon="Assets/icon.ico">
+        SnapsToDevicePixels="True"
+        FontSize="16"
+        Icon="Assets/icon.ico">
     <Window.DataContext>
         <ui:MainViewModel/>
     </Window.DataContext>
     <Window.Background>
         <ImageBrush ImageSource="/Assets/Background.png"/>
     </Window.Background>
+    <Window.Resources>
+        <!-- Base Button Style -->
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#3F362F2D"/>
+            <Setter Property="Foreground" Value="#362f2d"/>
+            <Setter Property="Margin" Value="0,5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Left"
+                                              VerticalAlignment="Center"
+                                              Margin="10,0"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#D8362F2D"/>
+                    <Setter Property="Foreground" Value="#D8D0BA"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Base Border Style -->
+        <Style TargetType="{x:Type Border}">
+            <Setter Property="BorderThickness" Value="0,2"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="BorderBrush" Value="#362f2d"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="StackPanel">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="115"/>
@@ -35,134 +78,35 @@
         <Grid Grid.Row="1">
             <!-- Slot Selection -->
             <Grid Visibility="{Binding SlotsGridVisibility}">
-                <StackPanel VerticalAlignment="Center"
-                            HorizontalAlignment="Center">
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                        <Setter Property="Height" Value="45"/>
+                        <Setter Property="FontSize" Value="24"/>
+                    </Style>
+                </Grid.Resources>
+
+                <StackPanel>
                     <!-- Slot 0 -->
-                    <Border BorderThickness="0,2">
-                        <Border.Style>
-                            <Style TargetType="{x:Type Border}">
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="BorderBrush" Value="#362f2d"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Border.Style>
+                    <Border>
                         <Button Content="⬛ N:A Slot Data 0"
-                                Height="45"
-                                Margin="0,5"
-                                FontSize="24"
                                 Click="SelectSlot0"
                                 IsEnabled="{Binding Slot0ButtonEnabled}">
-                            <Button.Style>
-                                <Style TargetType="{x:Type Button}">
-                                    <Setter Property="Background" Value="#3F362F2D"/>
-                                    <Setter Property="Foreground" Value="#362f2d"/>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type Button}">
-                                                <Border Background="{TemplateBinding Background}">
-                                                    <ContentPresenter HorizontalAlignment="Center"
-                                                                      VerticalAlignment="Center"
-                                                                      Margin="10,0"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#D8362F2D"/>
-                                            <Setter Property="Foreground" Value="#D8D0BA"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
                         </Button>
                     </Border>
 
                     <!-- Slot 1 -->
                     <Border BorderThickness="0,2">
-                        <Border.Style>
-                            <Style TargetType="{x:Type Border}">
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="BorderBrush" Value="#362f2d"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Border.Style>
                         <Button Content="⬛ N:A Slot Data 1"
-                                Height="45"
-                                Margin="0,5"
-                                FontSize="24"
                                 Click="SelectSlot1"
                                 IsEnabled="{Binding Slot1ButtonEnabled}">
-                            <Button.Style>
-                                <Style TargetType="{x:Type Button}">
-                                    <Setter Property="Background" Value="#3F362F2D"/>
-                                    <Setter Property="Foreground" Value="#362f2d"/>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type Button}">
-                                                <Border Background="{TemplateBinding Background}">
-                                                    <ContentPresenter HorizontalAlignment="Center"
-                                                                      VerticalAlignment="Center"
-                                                                      Margin="10,0"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#D8362F2D"/>
-                                            <Setter Property="Foreground" Value="#D8D0BA"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
                         </Button>
                     </Border>
 
                     <!-- Slot 2 -->
-                    <Border BorderThickness="0,2">
-                        <Border.Style>
-                            <Style TargetType="{x:Type Border}">
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="BorderBrush" Value="#362f2d"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Border.Style>
+                    <Border>
                         <Button Content="⬛ N:A Slot Data 2"
-                                Height="45"
-                                Margin="0,5"
-                                FontSize="24"
                                 Click="SelectSlot2"
                                 IsEnabled="{Binding Slot2ButtonEnabled}">
-                            <Button.Style>
-                                <Style TargetType="{x:Type Button}">
-                                    <Setter Property="Background" Value="#3F362F2D"/>
-                                    <Setter Property="Foreground" Value="#362f2d"/>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type Button}">
-                                                <Border Background="{TemplateBinding Background}">
-                                                    <ContentPresenter HorizontalAlignment="Center"
-                                                                      VerticalAlignment="Center"
-                                                                      Margin="10,0"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#D8362F2D"/>
-                                            <Setter Property="Foreground" Value="#D8D0BA"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
                         </Button>
                     </Border>
                 </StackPanel>
@@ -170,173 +114,38 @@
 
             <!-- Level Selection -->
             <Grid Visibility="{Binding LevelsGridVisibility}">
-                <StackPanel VerticalAlignment="Center"
-                            HorizontalAlignment="Center">
-                    <!-- Level 10 -->
-                    <Border BorderThickness="0,2">
-                        <Border.Style>
-                            <Style TargetType="{x:Type Border}">
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="BorderBrush" Value="#362f2d"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Border.Style>
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                        <Setter Property="Height" Value="30"/>
+                    </Style>
+                </Grid.Resources>
 
+                <StackPanel>
+                    <!-- Level 10 -->
+                    <Border>
                         <Button Content="⬛ Set EXP to Level 10"
-                                Height="30"
-                                Margin="0,5"
-                                FontSize="16" Click="ApplyLevel10">
-                            <Button.Style>
-                                <Style TargetType="{x:Type Button}">
-                                    <Setter Property="Background" Value="#3F362F2D"/>
-                                    <Setter Property="Foreground" Value="#362f2d"/>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type Button}">
-                                                <Border Background="{TemplateBinding Background}">
-                                                    <ContentPresenter HorizontalAlignment="Left"
-                                                                      VerticalAlignment="Center"
-                                                                      Margin="10,0"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#D8362F2D"/>
-                                            <Setter Property="Foreground" Value="#D8D0BA"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
+                                Click="ApplyLevel10">
                         </Button>
                     </Border>
 
                     <!-- Level 25 -->
-                    <Border BorderThickness="0,2">
-                        <Border.Style>
-                            <Style TargetType="{x:Type Border}">
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="BorderBrush" Value="#362f2d"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Border.Style>
-
+                    <Border>
                         <Button Content="⬛ Set EXP to Level 25"
-                                Height="30"
-                                Margin="0,5"
-                                FontSize="16" Click="ApplyLevel25">
-                            <Button.Style>
-                                <Style TargetType="{x:Type Button}">
-                                    <Setter Property="Background" Value="#3F362F2D"/>
-                                    <Setter Property="Foreground" Value="#362f2d"/>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type Button}">
-                                                <Border Background="{TemplateBinding Background}">
-                                                    <ContentPresenter HorizontalAlignment="Left"
-                                                                      VerticalAlignment="Center"
-                                                                      Margin="10,0"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#362f2d"/>
-                                            <Setter Property="Foreground" Value="#D8D0BA"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
+                                Click="ApplyLevel25">
                         </Button>
                     </Border>
 
                     <!-- Level 50 -->
-                    <Border BorderThickness="0,2">
-                        <Border.Style>
-                            <Style TargetType="{x:Type Border}">
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="BorderBrush" Value="#362f2d"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Border.Style>
-
+                    <Border>
                         <Button Content="⬛ Set EXP to Level 50"
-                                Height="30"
-                                Margin="0,5"
-                                FontSize="16" Click="ApplyLevel50">
-                            <Button.Style>
-                                <Style TargetType="{x:Type Button}">
-                                    <Setter Property="Background" Value="#3F362F2D"/>
-                                    <Setter Property="Foreground" Value="#362f2d"/>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type Button}">
-                                                <Border Background="{TemplateBinding Background}">
-                                                    <ContentPresenter HorizontalAlignment="Left"
-                                                                      VerticalAlignment="Center"
-                                                                      Margin="10,0"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#362f2d"/>
-                                            <Setter Property="Foreground" Value="#D8D0BA"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
+                                Click="ApplyLevel50">
                         </Button>
                     </Border>
 
                     <!-- Level 75 -->
-                    <Border BorderThickness="0,2">
-                        <Border.Style>
-                            <Style TargetType="{x:Type Border}">
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="BorderBrush" Value="#362f2d"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Border.Style>
-
+                    <Border>
                         <Button Content="⬛ Set EXP to Level 75"
-                                Height="30"
-                                Margin="0,5"
-                                FontSize="16" Click="ApplyLevel75">
-                            <Button.Style>
-                                <Style TargetType="{x:Type Button}">
-                                    <Setter Property="Background" Value="#3F362F2D"/>
-                                    <Setter Property="Foreground" Value="#362f2d"/>
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type Button}">
-                                                <Border Background="{TemplateBinding Background}">
-                                                    <ContentPresenter HorizontalAlignment="Left"
-                                                                      VerticalAlignment="Center"
-                                                                      Margin="10,0"/>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#362f2d"/>
-                                            <Setter Property="Foreground" Value="#D8D0BA"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
+                                Click="ApplyLevel75">
                         </Button>
                     </Border>
 
@@ -352,50 +161,13 @@
                                  HorizontalContentAlignment="Center"
                                  VerticalContentAlignment="Center"
                                  Padding="5"
-                                 FontSize="16"
                                  MaxLength="2"
                                  Background="#3F362F2D"
                                  Foreground="#362f2d"/>
 
-                        <Border Margin="0,5"
-                                BorderThickness="0,2">
-                            <Border.Style>
-                                <Style TargetType="{x:Type Border}">
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="BorderBrush" Value="#362f2d"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Border.Style>
-
+                        <Border Margin="0,5">
                             <Button Content="⬛ Set Custom Level"
-                                Height="30"
-                                Margin="0,5"
-                                FontSize="16" Click="ApplyCustomLevel">
-                                <Button.Style>
-                                    <Style TargetType="{x:Type Button}">
-                                        <Setter Property="Background" Value="#3F362F2D"/>
-                                        <Setter Property="Foreground" Value="#362f2d"/>
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate TargetType="{x:Type Button}">
-                                                    <Border Background="{TemplateBinding Background}">
-                                                        <ContentPresenter HorizontalAlignment="Left"
-                                                                      VerticalAlignment="Center"
-                                                                      Margin="10,0"/>
-                                                    </Border>
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Style.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#362f2d"/>
-                                                <Setter Property="Foreground" Value="#D8D0BA"/>
-                                            </Trigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Button.Style>
+                                    Click="ApplyCustomLevel">
                             </Button>
                         </Border>
                     </StackPanel>
@@ -406,7 +178,6 @@
                             <Style TargetType="Label">
                                 <Setter Property="Background" Value="#3F362F2D"/>
                                 <Setter Property="Foreground" Value="#362f2d"/>
-                                <Setter Property="FontSize" Value="16"/>
                                 <Setter Property="Padding" Value="10,5"/>
                             </Style>
                         </Grid.Resources>
@@ -428,7 +199,6 @@
                             <Style TargetType="Label">
                                 <Setter Property="Background" Value="#3F362F2D"/>
                                 <Setter Property="Foreground" Value="#362f2d"/>
-                                <Setter Property="FontSize" Value="16"/>
                                 <Setter Property="Padding" Value="10,5"/>
                             </Style>
                         </Grid.Resources>
