@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
-using Microsoft.Win32;
-using YuMi.NieRexper.UI.Common;
+using YuMi.NieRexper.Apply.Common;
 
 namespace YuMi.NieRexper.UI
 {
@@ -60,7 +60,7 @@ namespace YuMi.NieRexper.UI
 
                 var result = main.Apply(amount, fileName);
 
-                if (result.Status == LevelApplyStatus.Success)
+                if (result.Status == PatchStatus.Success)
                 {
                     StatusText = Properties.Resources.StatusSuccess;
                 }

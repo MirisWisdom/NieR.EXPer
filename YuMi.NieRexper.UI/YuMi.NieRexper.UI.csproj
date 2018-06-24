@@ -64,9 +64,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Common\ILevelApply.cs" />
-    <Compile Include="Common\LevelApplyResult.cs" />
-    <Compile Include="Common\LevelApplyStatus.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
