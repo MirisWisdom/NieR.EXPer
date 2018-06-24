@@ -374,12 +374,12 @@
                        HorizontalContentAlignment="Right"/>
                 </Grid>
             </StackPanel>
+        </Grid>
 
-            <Label Content="⸻ Yu:Miris ⸻"
+        <Label Content="⸻ Yu:Miris ⸻"
                VerticalAlignment="Bottom"
                HorizontalAlignment="Center"
                Foreground="#362f2d"
                FontFamily="Consolas"/>
-        </Grid>
     </Grid>
 </Window>
