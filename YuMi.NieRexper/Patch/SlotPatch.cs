@@ -31,10 +31,10 @@ namespace YuMi.NieRexper.Apply
         }
 
         /// <summary>
-        /// 
+        /// Patches the specified EXP amount to the provided save slot.
         /// </summary>
-        /// <param name="amount"></param>
-        /// <returns></returns>
+        /// <param name="amount">Amount of EXP to apply to the object.</param>
+        /// <returns>PatchResult instance representing the outcome of the patching procedure.</returns>
         public PatchResult Patch(int amount)
         {
             try
