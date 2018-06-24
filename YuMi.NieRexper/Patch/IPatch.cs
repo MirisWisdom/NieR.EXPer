@@ -2,6 +2,9 @@
 
 namespace YuMi.NieRexper.Apply
 {
+    /// <summary>
+    /// Interface to be implemented by NieR:Automata EXP patchers.
+    /// </summary>
     public interface IPatch
     {
         /// <summary>
