@@ -6,7 +6,7 @@
         xmlns:ui="clr-namespace:YuMi.NieRexper.UI"
         mc:Ignorable="d"
         Title="YuMi:NieRexper"
-        Height="480"
+        Height="600"
         Width="320"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
@@ -19,9 +19,9 @@
     </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="110"/>
+            <RowDefinition Height="120"/>
             <RowDefinition/>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="75"/>
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0"
@@ -34,7 +34,7 @@
 
         <Grid Grid.Row="1">
             <!-- Slot Selection -->
-            <Grid Visibility="{Binding SlotsGridVisibility}">
+            <Grid Visibility="{Binding LevelsGridVisibility}">
                 <StackPanel VerticalAlignment="Center"
                             HorizontalAlignment="Center">
                     <!-- Slot 0 -->
@@ -169,7 +169,7 @@
             </Grid>
 
             <!-- Level Selection -->
-            <Grid Visibility="{Binding LevelsGridVisibility}">
+            <Grid Visibility="{Binding SlotsGridVisibility}">
                 <StackPanel VerticalAlignment="Center"
                             HorizontalAlignment="Center">
                     <!-- Level 10 -->
@@ -339,6 +339,66 @@
                             </Button.Style>
                         </Button>
                     </Border>
+
+                    <!-- Custom -->
+                    <StackPanel>
+                        <Label Content="Custom Level:"
+                               Padding="0,5"/>
+
+                        <TextBox BorderThickness="0"
+                                 BorderBrush="#362f2d"
+                                 Text="25"
+                                 Height="30"
+                                 HorizontalContentAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 Padding="5"
+                                 FontSize="16"
+                                 MaxLength="2"
+                                 Background="#3F362F2D"
+                                 Foreground="#362f2d"/>
+
+                        <Border Margin="0,5"
+                                BorderThickness="0,2">
+                            <Border.Style>
+                                <Style TargetType="{x:Type Border}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="BorderBrush" Value="#362f2d"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+
+                            <Button Content="⬛ Set Custom Level"
+                                Height="30"
+                                Margin="0,5"
+                                FontSize="16" Click="ApplyLevel75">
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}">
+                                        <Setter Property="Background" Value="#3F362F2D"/>
+                                        <Setter Property="Foreground" Value="#362f2d"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type Button}">
+                                                    <Border Background="{TemplateBinding Background}">
+                                                        <ContentPresenter HorizontalAlignment="Left"
+                                                                      VerticalAlignment="Center"
+                                                                      Margin="10,0"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#362f2d"/>
+                                                <Setter Property="Foreground" Value="#D8D0BA"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </Border>
+                    </StackPanel>
 
                     <!-- Selected Slot -->
                     <Grid Margin="0,15,0,0">
