@@ -1,6 +1,6 @@
 <h1 align="center">NieRexper</h1>
 <p align="center">
-	<img src="https://user-images.githubusercontent.com/10241434/41805183-6a64c330-76d7-11e8-8d9a-457d11de156e.png"/>
+	<img src="https://user-images.githubusercontent.com/10241434/41816662-3e8405e6-77bd-11e8-967f-ff47ec9ac5e1.png"/>
  <br><br>
  Level Patcher for NieR:Automata
 </p>
@@ -21,7 +21,6 @@ Once you reach level 50+, the game's difficulty becomes rather trivial. To bring
 
 0. Note that .NET 4.5 is required to run the executable!
 1. Download the executable and run it.
-2. Click on whichever level you want to be, and in the pop-up window, select your save file.
-   - The folder for the N:A saves is located at `Documents\My Games\NieR_Automata`.
+2. Click on the save slot you want to modify, then click on the level you want to apply. Done!
 3. If all worked, you should see `Status: SUCCESS` in the window!
    - The tool will make a backup of your original save with a random string appended to its name; e.g. `SlotData_0-5d8fe167.dat`.
