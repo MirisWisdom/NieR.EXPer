@@ -14,7 +14,7 @@
 
         <!-- Slot 0 -->
         <Border>
-            <Button Content="⬛ N:A Slot Data 0"
+            <Button Content="⬛ Data Save Slot 0"
                     Click="SelectSlot0"
                     IsEnabled="{Binding Slot0ButtonEnabled}">
             </Button>
@@ -22,7 +22,7 @@
 
         <!-- Slot 1 -->
         <Border BorderThickness="0,2">
-            <Button Content="⬛ N:A Slot Data 1"
+            <Button Content="⬛ Data Save Slot 1"
                     Click="SelectSlot1"
                     IsEnabled="{Binding Slot1ButtonEnabled}">
             </Button>
@@ -30,7 +30,7 @@
 
         <!-- Slot 2 -->
         <Border>
-            <Button Content="⬛ N:A Slot Data 2"
+            <Button Content="⬛ Data Save Slot 2"
                     Click="SelectSlot2"
                     IsEnabled="{Binding Slot2ButtonEnabled}">
             </Button>
