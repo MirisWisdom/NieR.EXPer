@@ -10,94 +10,92 @@
                 <Setter Property="Height" Value="30"/>
             </Style>
         </StackPanel.Resources>
+
         <!-- Level 10 -->
         <Border>
             <Button Content="⬛ Set EXP to Level 10"
-                                Click="ApplyLevel10">
+                    Click="ApplyLevel10">
             </Button>
         </Border>
 
         <!-- Level 25 -->
         <Border>
             <Button Content="⬛ Set EXP to Level 25"
-                                Click="ApplyLevel25">
+                    Click="ApplyLevel25">
             </Button>
         </Border>
 
         <!-- Level 50 -->
         <Border>
             <Button Content="⬛ Set EXP to Level 50"
-                                Click="ApplyLevel50">
+                    Click="ApplyLevel50">
             </Button>
         </Border>
 
         <!-- Level 75 -->
         <Border>
             <Button Content="⬛ Set EXP to Level 75"
-                                Click="ApplyLevel75">
+                    Click="ApplyLevel75">
             </Button>
         </Border>
 
-        <Label Content="Custom Level:"
-                               Padding="0,5"/>
+        <TextBlock Text="Custom Level:"
+                   Padding="0,5"/>
 
         <TextBox BorderThickness="0"
-                                 BorderBrush="#362f2d"
-                                 Text="{Binding CustomLevel}"
-                                 Height="30"
-                                 HorizontalContentAlignment="Center"
-                                 VerticalContentAlignment="Center"
-                                 Padding="5"
-                                 MaxLength="2"
-                                 Background="#3F362F2D"
-                                 Foreground="#362f2d"/>
+                 BorderBrush="#362f2d"
+                 Text="{Binding CustomLevel}"
+                 Height="30"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Padding="5"
+                 MaxLength="2"
+                 Background="#3F362F2D"
+                 Foreground="#362f2d"/>
 
         <Border Margin="0,5">
             <Button Content="⬛ Set Custom Level"
-                                    Click="ApplyCustomLevel">
+                    Click="ApplyCustomLevel">
             </Button>
         </Border>
 
         <!-- Selected Slot -->
-        <Grid Margin="0,15,0,0">
-            <Grid.Resources>
+        <StackPanel Margin="0,15,0,0"
+                    HorizontalAlignment="Stretch">
+            <StackPanel.Resources>
                 <Style TargetType="Label">
                     <Setter Property="Background" Value="#3F362F2D"/>
                     <Setter Property="Foreground" Value="#362f2d"/>
                     <Setter Property="Padding" Value="10,5"/>
                 </Style>
-            </Grid.Resources>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Label Grid.Column="0"
-                               Content="Slot"
-                               HorizontalContentAlignment="Left"/>
-            <Label Grid.Column="1"
-                               Content="{Binding SlotFile}"
-                               HorizontalContentAlignment="Right"/>
-        </Grid>
+            </StackPanel.Resources>
 
-        <!-- Output -->
-        <Grid Margin="0,1,0,0">
-            <Grid.Resources>
-                <Style TargetType="Label">
-                    <Setter Property="Background" Value="#3F362F2D"/>
-                    <Setter Property="Foreground" Value="#362f2d"/>
-                    <Setter Property="Padding" Value="10,5"/>
-                </Style>
-            </Grid.Resources>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Label Grid.Column="0"
-                               Content="Status"
-                               HorizontalContentAlignment="Left"/>
-            <Label Grid.Column="1"
-                               Content="{Binding StatusText}"
-                               HorizontalContentAlignment="Right"/>
-        </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0"
+                       Content="Slot"
+                       HorizontalContentAlignment="Left"/>
+                <Label Grid.Column="1"
+                       Content="{Binding SlotFile}"
+                       HorizontalContentAlignment="Right"/>
+            </Grid>
+
+            <!-- Output -->
+            <Grid Margin="0,1,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0"
+                       Content="Status"
+                       HorizontalContentAlignment="Left"/>
+                <Label Grid.Column="1"
+                       Content="{Binding StatusText}"
+                       HorizontalContentAlignment="Right"/>
+            </Grid>
+        </StackPanel>
     </StackPanel>
 </UserControl>
