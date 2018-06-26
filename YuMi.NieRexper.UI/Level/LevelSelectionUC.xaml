@@ -39,8 +39,10 @@
             </Button>
         </Border>
 
-        <TextBlock Text="Custom Level:"
-                   Padding="0,5"/>
+        <Rectangle Height="1"
+                   Fill="#b0b0b0"
+                   Margin="0,5,0,15"
+                   Width="100"/>
 
         <TextBox BorderThickness="0"
                  BorderBrush="#362f2d"
