@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
+using YuMi.NieRexper.Calculate;
 using YuMi.NieRexper.Patch;
 using YuMi.NieRexper.Patch.Common;
-using YuMi.NieRexper.Calculate;
 
-namespace YuMi.NieRexper.UI
+namespace YuMi.NieRexper.UI.Main
 {
     /// <summary>
     /// Model that implements the ILevelApply interface and exposes integer values for various NieR:Automata levels.

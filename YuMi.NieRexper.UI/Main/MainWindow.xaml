@@ -1,0 +1,57 @@
+﻿<Window x:Class="YuMi.NieRexper.UI.Main.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="clr-namespace:YuMi.NieRexper.UI"
+        xmlns:slot="clr-namespace:YuMi.NieRexper.UI.Slot"
+        xmlns:level="clr-namespace:YuMi.NieRexper.UI.Level" 
+        xmlns:main="clr-namespace:YuMi.NieRexper.UI.Main"
+        mc:Ignorable="d"
+        Title="YuMi:NieRexper"
+        Height="600"
+        Width="320"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        SnapsToDevicePixels="True"
+        FontSize="16"
+        Icon="/Assets/icon.ico">
+    <Window.DataContext>
+        <main:MainViewModel/>
+    </Window.DataContext>
+    <Window.Background>
+        <ImageBrush ImageSource="/Assets/Background.png"/>
+    </Window.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="115"/>
+            <RowDefinition/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Label Grid.Row="0"
+               Content="YuMi:NieRexper"
+               Foreground="#362f2d"
+               FontSize="32"
+               FontFamily="Segoe UI Light"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Bottom"/>
+
+        <!-- Body -->
+        <Grid Grid.Row="1">
+            <slot:SlotSelectionUC x:Name="SlotSelection"
+                                  Visibility="{Binding SlotsUcVisibility}"/>
+            <level:LevelSelectionUC x:Name="LevelSelection"
+                                    Visibility="{Binding LevelsUcVisibility}"/>
+        </Grid>
+
+        <!-- Footer -->
+        <Label Grid.Row="2"
+               Content="⸻ Yu:Miris ⸻"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Center"
+               Foreground="#362f2d"
+               FontFamily="Consolas"/>
+    </Grid>
+</Window>

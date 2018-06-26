@@ -3,10 +3,10 @@ using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using YuMi.NieRexper.Patch.Common;
 using YuMi.NieRexper.Calculate;
+using YuMi.NieRexper.Patch.Common;
 
-namespace YuMi.NieRexper.UI
+namespace YuMi.NieRexper.UI.Main
 {
     public class MainViewModel : INotifyPropertyChanged
     {
@@ -18,9 +18,9 @@ namespace YuMi.NieRexper.UI
 
         uint customLevel = 25;
 
-        Visibility slotsGridVisibility = Visibility.Visible;
+        Visibility slotsUcVisibility = Visibility.Visible;
 
-        Visibility levelsGridVisibility = Visibility.Collapsed;
+        Visibility levelsUcVisibility = Visibility.Collapsed;
 
         /// <summary>
         /// Full path for the NieR:Automata saves directory: Documents\My Games\NieR_Automata
@@ -60,8 +60,8 @@ namespace YuMi.NieRexper.UI
                 {
                     slotFile = value;
                     NotifyPropertyChanged();
-                    SlotsGridVisibility = Visibility.Collapsed;
-                    LevelsGridVisibility = Visibility.Visible;
+                    SlotsUcVisibility = Visibility.Collapsed;
+                    LevelsUcVisibility = Visibility.Visible;
                 }
             }
         }
@@ -112,14 +112,14 @@ namespace YuMi.NieRexper.UI
         /// <summary>
         /// Toggle visibility based on whether a slot has been selected or not.
         /// </summary>
-        public Visibility SlotsGridVisibility {
+        public Visibility SlotsUcVisibility {
             get {
-                return slotsGridVisibility;
+                return slotsUcVisibility;
             }
             set {
-                if (slotsGridVisibility != value)
+                if (slotsUcVisibility != value)
                 {
-                    slotsGridVisibility = value;
+                    slotsUcVisibility = value;
                     NotifyPropertyChanged();
                 }
             }
@@ -128,14 +128,14 @@ namespace YuMi.NieRexper.UI
         /// <summary>
         /// Toggle visibility based on whether a slot has been selected or not.
         /// </summary>
-        public Visibility LevelsGridVisibility {
+        public Visibility LevelsUcVisibility {
             get {
-                return levelsGridVisibility;
+                return levelsUcVisibility;
             }
             set {
-                if (levelsGridVisibility != value)
+                if (levelsUcVisibility != value)
                 {
-                    levelsGridVisibility = value;
+                    levelsUcVisibility = value;
                     NotifyPropertyChanged();
                 }
             }
