@@ -20,27 +20,27 @@ namespace YuMi.NieRexper.UI.Level
             InitializeComponent();
         }
 
-        void ApplyLevel10(object sender, RoutedEventArgs e)
+        private void ApplyLevel10(object sender, RoutedEventArgs e)
         {
             AppliedLevel10?.Invoke(this, e);
         }
 
-        void ApplyLevel25(object sender, RoutedEventArgs e)
+        private void ApplyLevel25(object sender, RoutedEventArgs e)
         {
             AppliedLevel25?.Invoke(this, e);
         }
 
-        void ApplyLevel50(object sender, RoutedEventArgs e)
+        private void ApplyLevel50(object sender, RoutedEventArgs e)
         {
             AppliedLevel50?.Invoke(this, e);
         }
 
-        void ApplyLevel75(object sender, RoutedEventArgs e)
+        private void ApplyLevel75(object sender, RoutedEventArgs e)
         {
             AppliedLevel75?.Invoke(this, e);
         }
 
-        void ApplyCustomLevel(object sender, RoutedEventArgs e)
+        private void ApplyCustomLevel(object sender, RoutedEventArgs e)
         {
             AppliedCustomLevel?.Invoke(this, e);
         }

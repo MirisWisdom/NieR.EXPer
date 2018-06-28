@@ -41,12 +41,12 @@ The library can be imported by any .NET >=4.5 project. Feel free to use it in yo
 // Suppose we want the EXP required for level 10...
 int expWantedLevel = 10;
 
-// We create an instance of ExpCalculate in the YuMi.NieRexper.Calculate namespace.
-var expCalculation = new YuMi.NieRexper.Calculate.ExpCalculate()
+// We create an instance of ExpCalculator in the YuMi.NieRexper.Calculation namespace.
+var expCalculator = new YuMi.NieRexper.Calculation.ExpCalculator()
 
 // We then call the Calculate() method with our wanted level as the argument.
 // It will provide us with the EXP needed to reach that level.
-int expForTheLevel = expCalculation.Calculate(expWantedLevel);
+int expForTheLevel = expCalculator.Calculate(expWantedLevel);
 ```
 
 ## EXP Patching
@@ -57,25 +57,9 @@ int expForTheLevel = expCalculation.Calculate(expWantedLevel);
 // Let's get the absolute path for, say, the first save slot used by the player.
 var saveSlotPath = "C:\\SlotData_0.dat";
 
-// We now create an instance of SlotPatch and provide the save slot path to its constructor.
-var savesPatcher = new YuMi.NieRexper.Patch.SlotPatch(savesSlothPath);
+// We now create an instance of SlotPatcher and provide the save slot path to its constructor.
+var savesPatcher = new YuMi.NieRexper.Patching.SlotPatcher(savesSlothPath);
 
 // We then call the Patch() method with our wanted EXP as the argument.
-// Note that the method returns an instance of YuMi.NieRexper.Patch.Common.PatchResult ...
-// ... which represents the outcome of the patch in the Status property.
-var patchResult = savesPatcher.Patch(expForTheLevel); // or 3184
-```
-
-### Output
-
-```cs
-// We can inform the user or control the program flow by checking the Status enum property.
-if (patchResult.Status == PatchStatus.Success)
-{
-    Console.WriteLine("Successfully patched!");
-}
-else
-{
-    Console.WriteLine("Exception occurred: + " patchResult.Data);
-}
+savesPatcher.Patch(expForTheLevel); // or 3184
 ```

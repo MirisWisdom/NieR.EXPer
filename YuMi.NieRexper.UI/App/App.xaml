@@ -1,7 +1,6 @@
 ﻿<Application x:Class="YuMi.NieRexper.UI.App.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:YuMi.NieRexper"
              StartupUri="/Main/MainWindow.xaml">
     <Application.Resources>
         <!-- Base Button Style -->

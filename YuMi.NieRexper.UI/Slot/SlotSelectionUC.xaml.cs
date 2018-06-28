@@ -18,17 +18,17 @@ namespace YuMi.NieRexper.UI.Slot
             InitializeComponent();
         }
 
-        void SelectSlot0(object sender, RoutedEventArgs e)
+        private void SelectSlot0(object sender, RoutedEventArgs e)
         {
             Slot0Selected?.Invoke(this, e);
         }
 
-        void SelectSlot1(object sender, RoutedEventArgs e)
+        private void SelectSlot1(object sender, RoutedEventArgs e)
         {
             Slot1Selected?.Invoke(this, e);
         }
 
-        void SelectSlot2(object sender, RoutedEventArgs e)
+        private void SelectSlot2(object sender, RoutedEventArgs e)
         {
             Slot2Selected?.Invoke(this, e);
         }

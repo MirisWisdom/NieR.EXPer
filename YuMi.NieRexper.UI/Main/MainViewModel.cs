@@ -3,29 +3,23 @@ using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using YuMi.NieRexper.Calculate;
-using YuMi.NieRexper.Patch.Common;
+using YuMi.NieRexper.Calculation;
 
 namespace YuMi.NieRexper.UI.Main
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        Main main = new Main();
-
-        string statusText = Properties.Resources.StatusAwaiting;
-
-        string slotFile = string.Empty;
-
-        uint customLevel = 25;
-
-        Visibility slotsUcVisibility = Visibility.Visible;
-
-        Visibility levelsUcVisibility = Visibility.Collapsed;
+        private Main main = new Main();
+        private string statusText = Properties.Resources.StatusAwaiting;
+        private string slotFile = string.Empty;
+        private uint customLevel = 25;
+        private Visibility slotsUcVisibility = Visibility.Visible;
+        private Visibility levelsUcVisibility = Visibility.Collapsed;
 
         /// <summary>
         /// Full path for the NieR:Automata saves directory: Documents\My Games\NieR_Automata
         /// </summary>
-        string SlotsDirectory {
+        private string SlotsDirectory {
             get {
                 var myDocs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 return Path.Combine(myDocs, Properties.Resources.GamesDirectory, Properties.Resources.SavesDirectory);
@@ -147,11 +141,15 @@ namespace YuMi.NieRexper.UI.Main
         /// <param name="amount">Amount of EXP to apply to the save slot the user will choose.</param>
         public void ApplyEXP(int amount)
         {
-            var result = main.PatchSlot(Path.Combine(SlotsDirectory, SlotFile), amount);
-
-            StatusText = result.Status == PatchStatus.Success
-                ? Properties.Resources.StatusSuccess
-                : result.Data;
+            try
+            {
+                main.PatchSlot(Path.Combine(SlotsDirectory, SlotFile), amount);
+                StatusText = Properties.Resources.StatusSuccess;
+            }
+            catch (Exception e)
+            {
+                StatusText = e.Message;
+            }
         }
 
         /// <summary>
@@ -159,7 +157,15 @@ namespace YuMi.NieRexper.UI.Main
         /// </summary>
         public void ApplyCustomLevel()
         {
-            ApplyEXP(new ExpCalculate().Calculate((int)CustomLevel));
+            try
+            {
+                ApplyEXP(new ExpCalculator().Calculate((int)CustomLevel));
+                StatusText = Properties.Resources.StatusSuccess;
+            }
+            catch (Exception e)
+            {
+                StatusText = e.Message;
+            }
         }
 
         /// <summary>
@@ -167,7 +173,7 @@ namespace YuMi.NieRexper.UI.Main
         /// </summary>
         /// <param name="slot">Slot file to check, e.g. SlotData_0.dat</param>
         /// <returns>Provided slot file exists on the filesystem.</returns>
-        bool SlotExists(string slot)
+        private bool SlotExists(string slot)
         {
             return File.Exists(Path.Combine(SlotsDirectory, slot));
         }

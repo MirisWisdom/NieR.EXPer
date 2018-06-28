@@ -8,7 +8,7 @@ namespace YuMi.NieRexper.UI.Main
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainViewModel viewModel = new MainViewModel();
+        private MainViewModel viewModel = new MainViewModel();
 
         public MainWindow()
         {
@@ -26,42 +26,42 @@ namespace YuMi.NieRexper.UI.Main
             LevelSelection.AppliedCustomLevel += ApplyCustomLevel;
         }
 
-        void ApplyLevel10(object sender, EventArgs e)
+        private void ApplyLevel10(object sender, EventArgs e)
         {
             viewModel.ApplyEXP(Main.Level10);
         }
 
-        void ApplyLevel25(object sender, EventArgs e)
+        private void ApplyLevel25(object sender, EventArgs e)
         {
             viewModel.ApplyEXP(Main.Level25);
         }
 
-        void ApplyLevel50(object sender, EventArgs e)
+        private void ApplyLevel50(object sender, EventArgs e)
         {
             viewModel.ApplyEXP(Main.Level50);
         }
 
-        void ApplyLevel75(object sender, EventArgs e)
+        private void ApplyLevel75(object sender, EventArgs e)
         {
             viewModel.ApplyEXP(Main.Level75);
         }
 
-        void ApplyCustomLevel(object sender, EventArgs e)
+        private void ApplyCustomLevel(object sender, EventArgs e)
         {
             viewModel.ApplyCustomLevel();
         }
 
-        void SelectSlot0(object sender, EventArgs e)
+        private void SelectSlot0(object sender, EventArgs e)
         {
             viewModel.SlotFile = Properties.Resources.SlotData0;
         }
 
-        void SelectSlot1(object sender, EventArgs e)
+        private void SelectSlot1(object sender, EventArgs e)
         {
             viewModel.SlotFile = Properties.Resources.SlotData1;
         }
 
-        void SelectSlot2(object sender, EventArgs e)
+        private void SelectSlot2(object sender, EventArgs e)
         {
             viewModel.SlotFile = Properties.Resources.SlotData2;
         }
