@@ -1,8 +1,7 @@
 ﻿using System;
 using System.IO;
-using YuMi.NieRexper.Calculate;
-using YuMi.NieRexper.Patch;
-using YuMi.NieRexper.Patch.Common;
+using YuMi.NieRexper.Calculation;
+using YuMi.NieRexper.Patching;
 
 namespace YuMi.NieRexper.UI.Main
 {
@@ -16,7 +15,7 @@ namespace YuMi.NieRexper.UI.Main
         /// </summary>
         public static int Level10 {
             get {
-                return new ExpCalculate().Calculate(10);
+                return new ExpCalculator().Calculate(10);
             }
         }
 
@@ -25,7 +24,7 @@ namespace YuMi.NieRexper.UI.Main
         /// </summary>
         public static int Level25 {
             get {
-                return new ExpCalculate().Calculate(25);
+                return new ExpCalculator().Calculate(25);
             }
         }
 
@@ -34,7 +33,7 @@ namespace YuMi.NieRexper.UI.Main
         /// </summary>
         public static int Level50 {
             get {
-                return new ExpCalculate().Calculate(50);
+                return new ExpCalculator().Calculate(50);
             }
         }
 
@@ -43,7 +42,7 @@ namespace YuMi.NieRexper.UI.Main
         /// </summary>
         public static int Level75 {
             get {
-                return new ExpCalculate().Calculate(75);
+                return new ExpCalculator().Calculate(75);
             }
         }
 
@@ -52,11 +51,10 @@ namespace YuMi.NieRexper.UI.Main
         /// </summary>
         /// <param name="amount">Amount of EXP.</param>
         /// <param name="slotName">Save file location.</param>
-        /// <returns>Result object representing the outcome of the patch procedure.</returns>
-        public PatchResult PatchSlot(string slotName, int amount)
+        public void PatchSlot(string slotName, int amount)
         {
             File.Copy(slotName, GetUniqueSlotName(slotName), true);
-            return new SlotPatch(slotName).Patch(amount);
+            new SlotPatcher(slotName).Patch(amount);
         }
 
         /// <summary>
@@ -64,7 +62,7 @@ namespace YuMi.NieRexper.UI.Main
         /// </summary>
         /// <param name="fileName">Absolute slotName, e.g. C:\SlotData_0.dat</param>
         /// <returns>Unique..ified... save slot file name, e.g. C:\SlotData_0_5d8fe167.dat</returns>
-        string GetUniqueSlotName(string fileName)
+        private string GetUniqueSlotName(string fileName)
         {
             var fileNameNoExtension = fileName.Substring(0, fileName.Length - 4);
             var guidWithFirst8Chars = Guid.NewGuid().ToString().Substring(0, 8);
