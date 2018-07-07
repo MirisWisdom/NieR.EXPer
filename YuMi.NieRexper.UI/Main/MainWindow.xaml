@@ -31,7 +31,7 @@
         <!-- Header -->
         <Label Grid.Row="0"
                Content="YuMi:NieRexper"
-               Foreground="#362f2d"
+               Foreground="#4d493e"
                FontSize="32"
                FontFamily="Segoe UI Light"
                HorizontalAlignment="Center"
@@ -50,7 +50,7 @@
                Content="⸻ Yu:Miris ⸻"
                VerticalAlignment="Bottom"
                HorizontalAlignment="Center"
-               Foreground="#362f2d"
+               Foreground="#4d493e"
                FontFamily="Consolas"/>
     </Grid>
 </Window>
