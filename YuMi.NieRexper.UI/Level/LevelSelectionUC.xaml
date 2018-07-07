@@ -45,15 +45,15 @@
                    Width="100"/>
 
         <TextBox BorderThickness="0"
-                 BorderBrush="#362f2d"
+                 BorderBrush="#4d493e"
                  Text="{Binding CustomLevel}"
                  Height="30"
                  HorizontalContentAlignment="Center"
                  VerticalContentAlignment="Center"
                  Padding="5"
                  MaxLength="2"
-                 Background="#3F362F2D"
-                 Foreground="#362f2d"/>
+                 Background="#3F4d493e"
+                 Foreground="#4d493e"/>
 
         <Border Margin="0,5">
             <Button Content="⬛ Set Custom Level"
@@ -66,8 +66,8 @@
                     HorizontalAlignment="Stretch">
             <StackPanel.Resources>
                 <Style TargetType="Label">
-                    <Setter Property="Background" Value="#3F362F2D"/>
-                    <Setter Property="Foreground" Value="#362f2d"/>
+                    <Setter Property="Background" Value="#3F4d493e"/>
+                    <Setter Property="Foreground" Value="#4d493e"/>
                     <Setter Property="Padding" Value="10,5"/>
                 </Style>
             </StackPanel.Resources>

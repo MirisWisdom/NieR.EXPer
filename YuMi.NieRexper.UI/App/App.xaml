@@ -5,8 +5,8 @@
     <Application.Resources>
         <!-- Base Button Style -->
         <Style TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="#3F362F2D"/>
-            <Setter Property="Foreground" Value="#362f2d"/>
+            <Setter Property="Background" Value="#594D493E"/>
+            <Setter Property="Foreground" Value="#4d493e"/>
             <Setter Property="Margin" Value="0,5"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -21,7 +21,7 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#D8362F2D"/>
+                    <Setter Property="Background" Value="#D84d493e"/>
                     <Setter Property="Foreground" Value="#D8D0BA"/>
                 </Trigger>
             </Style.Triggers>
@@ -32,7 +32,7 @@
             <Setter Property="BorderThickness" Value="0,2"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="BorderBrush" Value="#362f2d"/>
+                    <Setter Property="BorderBrush" Value="#4d493e"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
