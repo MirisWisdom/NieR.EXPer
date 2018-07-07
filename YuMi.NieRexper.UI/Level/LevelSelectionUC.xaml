@@ -6,8 +6,10 @@
              mc:Ignorable="d" >
     <StackPanel>
         <StackPanel.Resources>
-            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
-                <Setter Property="Height" Value="30"/>
+            <Style TargetType="{x:Type Button}"
+                   BasedOn="{StaticResource {x:Type Button}}">
+                <Setter Property="Height"
+                        Value="30"/>
             </Style>
         </StackPanel.Resources>
 
@@ -45,15 +47,14 @@
                    Width="100"/>
 
         <TextBox BorderThickness="0"
-                 BorderBrush="#4d493e"
                  Text="{Binding CustomLevel}"
                  Height="30"
                  HorizontalContentAlignment="Center"
                  VerticalContentAlignment="Center"
                  Padding="5"
                  MaxLength="2"
-                 Background="#3F4d493e"
-                 Foreground="#4d493e"/>
+                 Background="{StaticResource YoRHaDark30}"
+                 Foreground="{StaticResource YoRHaDark}"/>
 
         <Border Margin="0,5">
             <Button Content="⬛ Set Custom Level"
@@ -66,9 +67,12 @@
                     HorizontalAlignment="Stretch">
             <StackPanel.Resources>
                 <Style TargetType="Label">
-                    <Setter Property="Background" Value="#3F4d493e"/>
-                    <Setter Property="Foreground" Value="#4d493e"/>
-                    <Setter Property="Padding" Value="10,5"/>
+                    <Setter Property="Background"
+                            Value="{StaticResource YoRHaDark30}"/>
+                    <Setter Property="Foreground"
+                            Value="{StaticResource YoRHaDark}"/>
+                    <Setter Property="Padding"
+                            Value="10,5"/>
                 </Style>
             </StackPanel.Resources>
 

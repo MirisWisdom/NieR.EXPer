@@ -6,7 +6,8 @@
              mc:Ignorable="d">
     <StackPanel>
         <StackPanel.Resources>
-            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+            <Style TargetType="{x:Type Button}"
+                   BasedOn="{StaticResource {x:Type Button}}">
                 <Setter Property="Height" Value="45"/>
                 <Setter Property="FontSize" Value="24"/>
             </Style>
