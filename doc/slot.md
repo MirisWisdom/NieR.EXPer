@@ -1,8 +1,9 @@
 # Profile Save Slot
 
 NieR:Automata saves the player's progress to three save slots of their choice,
-numbered 0 to 2. The slots are located in `%PERSONAL%\My Games\NieR_Automata`,
-with the following names:
+numbered `0` to `2`.
+The slots are located in `%PERSONAL%\My Games\NieR_Automata`, with the following
+names:
 
 - `SlotData_0.dat`
 - `SlotData_1.dat`
@@ -10,7 +11,7 @@ with the following names:
 
 As mentioned in the [Experience Points & Levels](level.md) documentation, the
 level is inferred from the EXP. Rather than the level being saved in the slot,
-it's the current EXP value that's saved:
+it's the current EXP value that's being saved:
 
 | Offset    | Variable Type    |
 | --------- | ---------------- |
