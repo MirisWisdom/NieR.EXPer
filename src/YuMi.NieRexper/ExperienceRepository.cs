@@ -4,40 +4,40 @@ using System.IO;
 namespace YuMi.NieRexper
 {
     /// <summary>
-    ///     Serialises Experience object to Save file.
+    ///     Serialises Experience object to a save slot file.
     /// </summary>
     public class ExperienceRepository
     {
         /// <summary>
-        ///     Offset in the save binary where the EXP value is stored.
+        ///     Offset in the slot binary where the EXP value is stored.
         /// </summary>
         private const int LevelOffset = 0x3871C;
 
         /// <summary>
-        ///     NieR:Automata Save slot used for the Experience serialisation.
+        ///     NieR:Automata save slot used for the Experience serialisation.
         /// </summary>
-        private readonly Save _save;
+        private readonly Slot _slot;
 
         /// <summary>
         ///     ExperienceRepository constructor.
         /// </summary>
-        /// <param name="save">
-        ///     NieR:Automata Save slot used for the Experience serialisation.
+        /// <param name="slot">
+        ///     NieR:Automata Slot slot used for the Experience serialisation.
         /// </param>
-        public ExperienceRepository(Save save)
+        public ExperienceRepository(Slot slot)
         {
-            _save = save;
+            _slot = slot;
         }
 
         /// <summary>
-        ///     Serialise Experience object to the given Save file.
+        ///     Serialise Experience object to the given Slot file.
         /// </summary>
         /// <param name="experience">
         ///     Experience object to serialise.
         /// </param>
         public void Save(Experience experience)
         {
-            if (File.Exists(_save))
+            if (File.Exists(_slot))
                 throw new FileNotFoundException("Slot not found.");
 
             BackupSave();
@@ -46,7 +46,7 @@ namespace YuMi.NieRexper
 
         private void SavePoints(Experience experience)
         {
-            using (var writer = new BinaryWriter(File.OpenWrite(_save)))
+            using (var writer = new BinaryWriter(File.OpenWrite(_slot)))
             {
                 var points = BitConverter.GetBytes(experience.Points);
                 writer.BaseStream.Seek(LevelOffset, SeekOrigin.Begin);
@@ -56,16 +56,16 @@ namespace YuMi.NieRexper
 
         private void BackupSave()
         {
-            var slotFileName = Path.GetFileName(_save)
-                               ?? throw new FormatException("Cannot infer file name from Save path.");
+            var slotFileName = Path.GetFileName(_slot)
+                               ?? throw new FormatException("Cannot infer file name from Slot path.");
 
-            var sourceFolder = Path.GetDirectoryName(_save)
-                               ?? throw new FormatException("Cannot infer directory from Save path.");
+            var sourceFolder = Path.GetDirectoryName(_slot)
+                               ?? throw new FormatException("Cannot infer directory from Slot path.");
 
             var backupFolder = Path.Combine(sourceFolder, $"NieR.EXPer-{Guid.NewGuid()}");
 
             Directory.CreateDirectory(backupFolder);
-            File.Copy(_save, Path.Combine(backupFolder, slotFileName));
+            File.Copy(_slot, Path.Combine(backupFolder, slotFileName));
         }
     }
 }

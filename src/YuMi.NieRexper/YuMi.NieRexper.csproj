@@ -45,7 +45,7 @@
     <Compile Include="Level.cs" />
     <Compile Include="Experience.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Save.cs" />
+    <Compile Include="Slot.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

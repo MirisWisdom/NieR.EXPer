@@ -3,7 +3,7 @@ namespace YuMi.NieRexper
     /// <summary>
     ///     Represents a NieR:Automata save slot on the filesystem.
     /// </summary>
-    public class Save
+    public class Slot
     {
         /// <summary>
         ///     <see cref="Path" />
@@ -19,7 +19,7 @@ namespace YuMi.NieRexper
         /// <returns>
         ///     String representation of the object.
         /// </returns>
-        public static implicit operator string(Save slot)
+        public static implicit operator string(Slot slot)
         {
             return slot.Path;
         }
@@ -33,9 +33,9 @@ namespace YuMi.NieRexper
         /// <returns>
         ///     Object representation of the string.
         /// </returns>
-        public static explicit operator Save(string path)
+        public static explicit operator Slot(string path)
         {
-            return new Save
+            return new Slot
             {
                 Path = path
             };
