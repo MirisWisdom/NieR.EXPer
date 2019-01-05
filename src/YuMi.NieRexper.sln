@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 	ProjectSection(SolutionItems) = preProject
 		..\LICENSE = ..\LICENSE
 		..\README.md = ..\README.md
+		..\doc\level.md = ..\doc\level.md
+		..\doc\slot.md = ..\doc\slot.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuMi.NieRexper.GUI", "YuMi.NieRexper.GUI\YuMi.NieRexper.GUI.csproj", "{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}"
