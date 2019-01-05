@@ -17,17 +17,17 @@
  * along with NieR.EXPer.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-﻿using System;
+using System;
 using System.Windows;
 
 namespace YuMi.NieRexper.UI.Main
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    ///     Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainViewModel viewModel = new MainViewModel();
+        private readonly MainViewModel viewModel = new MainViewModel();
 
         public MainWindow()
         {

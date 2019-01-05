@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright (C) 2018-2019 Emilian Roman
  * 
  * This file is part of NieR.EXPer.
@@ -17,8 +17,7 @@
  * along with NieR.EXPer.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using YuMi.NieRexper.Calculation;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace YuMi.NieRexper.Test
 {

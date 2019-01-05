@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright (C) 2018-2019 Emilian Roman
  * 
  * This file is part of NieR.EXPer.
@@ -17,30 +17,18 @@
  * along with NieR.EXPer.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-﻿using System;
+using System;
 using System.IO;
 
-namespace YuMi.NieRexper.Patching
+namespace YuMi.NieRexper
 {
     /// <summary>
-    /// EXP patcher for NieR:Automata save slots.
+    ///     EXP patcher for NieR:Automata save slots.
     /// </summary>
-    public class SlotPatcher : IPatcher
+    public class SlotPatcher
     {
         /// <summary>
-        /// Offset in the save binary where the EXP value is stored.
-        /// </summary>
-        private int Address {
-            get { return 0x3871C; }
-        }
-
-        /// <summary>
-        /// Path of the NieR:Automata save slot to patch.
-        /// </summary>
-        private string SlotPath { get; }
-
-        /// <summary>
-        /// SlotPatcher constructor.
+        ///     SlotPatcher constructor.
         /// </summary>
         /// <param name="slotPath">Path of the NieR:Automata save slot to patch.</param>
         public SlotPatcher(string slotPath)
@@ -49,7 +37,17 @@ namespace YuMi.NieRexper.Patching
         }
 
         /// <summary>
-        /// Patches the specified EXP amount to the provided save slot.
+        ///     Offset in the save binary where the EXP value is stored.
+        /// </summary>
+        private int Address => 0x3871C;
+
+        /// <summary>
+        ///     Path of the NieR:Automata save slot to patch.
+        /// </summary>
+        private string SlotPath { get; }
+
+        /// <summary>
+        ///     Patches the specified EXP amount to the provided save slot.
         /// </summary>
         /// <param name="amount">Amount of EXP to apply to the object.</param>
         public void Patch(int amount)

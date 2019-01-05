@@ -24,7 +24,7 @@ using System.Windows.Controls;
 namespace YuMi.NieRexper.UI.Slot
 {
     /// <summary>
-    /// Interaction logic for SlotSelectionUC.xaml
+    ///     Interaction logic for SlotSelectionUC.xaml
     /// </summary>
     public partial class SlotSelectionUC : UserControl
     {

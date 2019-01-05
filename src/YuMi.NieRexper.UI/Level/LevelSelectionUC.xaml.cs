@@ -17,22 +17,22 @@
  * along with NieR.EXPer.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-﻿using System;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace YuMi.NieRexper.UI.Level
 {
     /// <summary>
-    /// Interaction logic for LevelSelectionUC.xaml
+    ///     Interaction logic for LevelSelectionUC.xaml
     /// </summary>
     public partial class LevelSelectionUC : UserControl
     {
+        public EventHandler AppliedCustomLevel;
         public EventHandler AppliedLevel10;
         public EventHandler AppliedLevel25;
         public EventHandler AppliedLevel50;
         public EventHandler AppliedLevel75;
-        public EventHandler AppliedCustomLevel;
 
         public LevelSelectionUC()
         {

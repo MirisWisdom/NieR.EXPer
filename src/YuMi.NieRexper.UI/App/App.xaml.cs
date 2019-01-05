@@ -17,10 +17,10 @@
  * along with NieR.EXPer.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-﻿namespace YuMi.NieRexper.UI.App
+namespace YuMi.NieRexper.UI.App
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    ///     Interaction logic for App.xaml
     /// </summary>
     public partial class App
     {

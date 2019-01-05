@@ -1,24 +1,5 @@
-/**
- * Copyright (C) 2018-2019 Emilian Roman
- * 
- * This file is part of NieR.EXPer.
- * 
- * NieR.EXPer is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * NieR.EXPer is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with NieR.EXPer.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 ﻿/**
- * Copyright (C) 2019 Emilian Roman
+ * Copyright (C) 2018-2019 Emilian Roman
  * 
  * This file is part of NieR.EXPer.
  * 
@@ -38,17 +19,17 @@
 
 using System;
 
-namespace YuMi.NieRexper.Calculation
+namespace YuMi.NieRexper
 {
     /// <summary>
-    /// Handles the calculation of EXP points for a specified NieR:Automata level.
+    ///     Handles the calculation of EXP points for a specified NieR:Automata level.
     /// </summary>
-    public class ExpCalculator : ICalculator
+    public class ExpCalculator
     {
         /// <summary>
-        /// Array of EXPs that correspond to levels 1-99.
+        ///     Array of EXPs that correspond to levels 1-99.
         /// </summary>
-        private int[] expValues =
+        private readonly int[] expValues =
         {
             0x000000, 0x000030, 0x00008B, 0x000126, 0x00020D, 0x00034B, 0x0004EB, 0x0006F6, 0x000975, 0x000C70,
             0x000FF0, 0x0013FC, 0x00189C, 0x001DD6, 0x0023B3, 0x002A39, 0x00316E, 0x00395A, 0x004202, 0x004B6D,
@@ -59,11 +40,11 @@ namespace YuMi.NieRexper.Calculation
             0x0559F5, 0x05951E, 0x05D1D3, 0x061018, 0x064FF0, 0x06915F, 0x06D46A, 0x071913, 0x075F5F, 0x07A751,
             0x07F0ED, 0x083C36, 0x088930, 0x08D7E0, 0x092847, 0x097A6A, 0x09CE4D, 0x0A23F2, 0x0A7B5E, 0x0AD494,
             0x0B2F97, 0x0B8C6B, 0x0BEB13, 0x0C4B93, 0x0CADEE, 0x0D1227, 0x0D7842, 0x0DE043, 0x0E4A2B, 0x0EB600,
-            0x0F23C4, 0x0F937A, 0x100526, 0x1078CB, 0x10EE6C, 0x11660D, 0x11DFB0, 0x125B59, 0x12D90B,
+            0x0F23C4, 0x0F937A, 0x100526, 0x1078CB, 0x10EE6C, 0x11660D, 0x11DFB0, 0x125B59, 0x12D90B
         };
 
         /// <summary>
-        /// Returns the number of EXP points required for the level provided as an argument.
+        ///     Returns the number of EXP points required for the level provided as an argument.
         /// </summary>
         /// <param name="value">The level to get the required EXP value for.</param>
         /// <returns>The EXP required for the provided level.</returns>
@@ -71,9 +52,7 @@ namespace YuMi.NieRexper.Calculation
         public int Calculate(int value)
         {
             if (value < 1 || value > 99)
-            {
                 throw new IndexOutOfRangeException($"Expected value >=1 && <=99; {value} given.");
-            }
 
             return expValues[value - 1];
         }

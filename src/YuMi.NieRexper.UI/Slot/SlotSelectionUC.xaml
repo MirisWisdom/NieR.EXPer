@@ -1,15 +1,15 @@
 ﻿<UserControl x:Class="YuMi.NieRexper.UI.Slot.SlotSelectionUC"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d">
     <StackPanel>
         <StackPanel.Resources>
             <Style TargetType="{x:Type Button}"
                    BasedOn="{StaticResource {x:Type Button}}">
-                <Setter Property="Height" Value="45"/>
-                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="Height" Value="45" />
+                <Setter Property="FontSize" Value="24" />
             </Style>
         </StackPanel.Resources>
 
@@ -17,24 +17,21 @@
         <Border>
             <Button Content="⬛ Data Save Slot 0"
                     Click="SelectSlot0"
-                    IsEnabled="{Binding Slot0ButtonEnabled}">
-            </Button>
+                    IsEnabled="{Binding Slot0ButtonEnabled}" />
         </Border>
 
         <!-- Slot 1 -->
         <Border BorderThickness="0,2">
             <Button Content="⬛ Data Save Slot 1"
                     Click="SelectSlot1"
-                    IsEnabled="{Binding Slot1ButtonEnabled}">
-            </Button>
+                    IsEnabled="{Binding Slot1ButtonEnabled}" />
         </Border>
 
         <!-- Slot 2 -->
         <Border>
             <Button Content="⬛ Data Save Slot 2"
                     Click="SelectSlot2"
-                    IsEnabled="{Binding Slot2ButtonEnabled}">
-            </Button>
+                    IsEnabled="{Binding Slot2ButtonEnabled}" />
         </Border>
     </StackPanel>
 </UserControl>

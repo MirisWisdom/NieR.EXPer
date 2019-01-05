@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright (C) 2018-2019 Emilian Roman
  * 
  * This file is part of NieR.EXPer.
@@ -17,56 +17,38 @@
  * along with NieR.EXPer.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-﻿using System;
+using System;
 using System.IO;
-using YuMi.NieRexper.Calculation;
-using YuMi.NieRexper.Patching;
 
 namespace YuMi.NieRexper.UI.Main
 {
     /// <summary>
-    /// Model that implements the ILevelApply interface and exposes integer values for various NieR:Automata levels.
+    ///     Model that implements the ILevelApply interface and exposes integer values for various NieR:Automata levels.
     /// </summary>
     public class Main
     {
         /// <summary>
-        /// EXP required to reach level 10.
+        ///     EXP required to reach level 10.
         /// </summary>
-        public static int Level10 {
-            get {
-                return new ExpCalculator().Calculate(10);
-            }
-        }
+        public static int Level10 => new ExpCalculator().Calculate(10);
 
         /// <summary>
-        /// EXP required to reach level 25.
+        ///     EXP required to reach level 25.
         /// </summary>
-        public static int Level25 {
-            get {
-                return new ExpCalculator().Calculate(25);
-            }
-        }
+        public static int Level25 => new ExpCalculator().Calculate(25);
 
         /// <summary>
-        /// EXP required to reach level 50.
+        ///     EXP required to reach level 50.
         /// </summary>
-        public static int Level50 {
-            get {
-                return new ExpCalculator().Calculate(50);
-            }
-        }
+        public static int Level50 => new ExpCalculator().Calculate(50);
 
         /// <summary>
-        /// EXP required to reach level 75.
+        ///     EXP required to reach level 75.
         /// </summary>
-        public static int Level75 {
-            get {
-                return new ExpCalculator().Calculate(75);
-            }
-        }
+        public static int Level75 => new ExpCalculator().Calculate(75);
 
         /// <summary>
-        /// Apply experience points to the specified save file.
+        ///     Apply experience points to the specified save file.
         /// </summary>
         /// <param name="amount">Amount of EXP.</param>
         /// <param name="slotName">Save file location.</param>
@@ -77,7 +59,7 @@ namespace YuMi.NieRexper.UI.Main
         }
 
         /// <summary>
-        /// Returns the inbound save slot's file name with an unique string padded into it.
+        ///     Returns the inbound save slot's file name with an unique string padded into it.
         /// </summary>
         /// <param name="fileName">Absolute slotName, e.g. C:\SlotData_0.dat</param>
         /// <returns>Unique..ified... save slot file name, e.g. C:\SlotData_0_5d8fe167.dat</returns>

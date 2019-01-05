@@ -40,11 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculation\ExpCalculator.cs" />
-    <Compile Include="Calculation\ICalculator.cs" />
-    <Compile Include="Patching\IPatcher.cs" />
-    <Compile Include="Patching\SlotPatcher.cs" />
+    <Compile Include="ExpCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SlotPatcher.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

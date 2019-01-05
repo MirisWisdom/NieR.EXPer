@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:slot="clr-namespace:YuMi.NieRexper.UI.Slot"
-        xmlns:level="clr-namespace:YuMi.NieRexper.UI.Level" 
+        xmlns:level="clr-namespace:YuMi.NieRexper.UI.Level"
         xmlns:main="clr-namespace:YuMi.NieRexper.UI.Main"
         mc:Ignorable="d"
         Title="YuMi:NieRexper"
@@ -16,16 +16,16 @@
         FontSize="16"
         Icon="/Assets/icon.ico">
     <Window.DataContext>
-        <main:MainViewModel/>
+        <main:MainViewModel />
     </Window.DataContext>
     <Window.Background>
-        <ImageBrush ImageSource="/Assets/Background.png"/>
+        <ImageBrush ImageSource="/Assets/Background.png" />
     </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="115"/>
-            <RowDefinition/>
-            <RowDefinition Height="75"/>
+            <RowDefinition Height="115" />
+            <RowDefinition />
+            <RowDefinition Height="75" />
         </Grid.RowDefinitions>
 
         <!-- Header -->
@@ -35,14 +35,14 @@
                FontSize="32"
                FontFamily="Segoe UI Light"
                HorizontalAlignment="Center"
-               VerticalAlignment="Bottom"/>
+               VerticalAlignment="Bottom" />
 
         <!-- Body -->
         <Grid Grid.Row="1">
             <slot:SlotSelectionUC x:Name="SlotSelection"
-                                  Visibility="{Binding SlotsUcVisibility}"/>
+                                  Visibility="{Binding SlotsUcVisibility}" />
             <level:LevelSelectionUC x:Name="LevelSelection"
-                                    Visibility="{Binding LevelsUcVisibility}"/>
+                                    Visibility="{Binding LevelsUcVisibility}" />
         </Grid>
 
         <!-- Footer -->
@@ -51,6 +51,6 @@
                VerticalAlignment="Bottom"
                HorizontalAlignment="Center"
                Foreground="{StaticResource YoRHaDark}"
-               FontFamily="Consolas"/>
+               FontFamily="Consolas" />
     </Grid>
 </Window>

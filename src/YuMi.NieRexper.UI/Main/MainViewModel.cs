@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Copyright (C) 2018-2019 Emilian Roman
  * 
  * This file is part of NieR.EXPer.
@@ -17,42 +17,44 @@
  * along with NieR.EXPer.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using YuMi.NieRexper.Calculation;
+using YuMi.NieRexper.UI.Properties;
 
 namespace YuMi.NieRexper.UI.Main
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private Main main = new Main();
-        private string statusText = Properties.Resources.StatusAwaiting;
-        private string slotFile = string.Empty;
         private uint customLevel = 25;
-        private Visibility slotsUcVisibility = Visibility.Visible;
         private Visibility levelsUcVisibility = Visibility.Collapsed;
+        private readonly Main main = new Main();
+        private string slotFile = string.Empty;
+        private Visibility slotsUcVisibility = Visibility.Visible;
+        private string statusText = Resources.StatusAwaiting;
 
         /// <summary>
-        /// Full path for the NieR:Automata saves directory: Documents\My Games\NieR_Automata
+        ///     Full path for the NieR:Automata saves directory: Documents\My Games\NieR_Automata
         /// </summary>
-        private string SlotsDirectory {
-            get {
+        private string SlotsDirectory
+        {
+            get
+            {
                 var myDocs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                return Path.Combine(myDocs, Properties.Resources.GamesDirectory, Properties.Resources.SavesDirectory);
+                return Path.Combine(myDocs, Resources.GamesDirectory, Resources.SavesDirectory);
             }
         }
 
         /// <summary>
-        /// Text representation of the outcome status.
+        ///     Text representation of the outcome status.
         /// </summary>
-        public string StatusText {
-            get {
-                return statusText;
-            }
-            set {
+        public string StatusText
+        {
+            get => statusText;
+            set
+            {
                 if (value != statusText)
                 {
                     statusText = value;
@@ -62,13 +64,13 @@ namespace YuMi.NieRexper.UI.Main
         }
 
         /// <summary>
-        /// Absolute path representation of the selected slot.
+        ///     Absolute path representation of the selected slot.
         /// </summary>
-        public string SlotFile {
-            get {
-                return slotFile;
-            }
-            set {
+        public string SlotFile
+        {
+            get => slotFile;
+            set
+            {
                 if (value != slotFile)
                 {
                     slotFile = value;
@@ -80,13 +82,13 @@ namespace YuMi.NieRexper.UI.Main
         }
 
         /// <summary>
-        /// Property representing the custom level typed by the user.
+        ///     Property representing the custom level typed by the user.
         /// </summary>
-        public uint CustomLevel {
-            get {
-                return customLevel;
-            }
-            set {
+        public uint CustomLevel
+        {
+            get => customLevel;
+            set
+            {
                 if (value != customLevel)
                 {
                     customLevel = value;
@@ -96,40 +98,28 @@ namespace YuMi.NieRexper.UI.Main
         }
 
         /// <summary>
-        /// Toggles whether the Slot 0 selection button is enabled or not depending on Slot 0's existence.
+        ///     Toggles whether the Slot 0 selection button is enabled or not depending on Slot 0's existence.
         /// </summary>
-        public bool Slot0ButtonEnabled {
-            get {
-                return SlotExists(Properties.Resources.SlotData0);
-            }
-        }
+        public bool Slot0ButtonEnabled => SlotExists(Resources.SlotData0);
 
         /// <summary>
-        /// Toggles whether the Slot 0 selection button is enabled or not depending on Slot 1's existence.
+        ///     Toggles whether the Slot 0 selection button is enabled or not depending on Slot 1's existence.
         /// </summary>
-        public bool Slot1ButtonEnabled {
-            get {
-                return SlotExists(Properties.Resources.SlotData1);
-            }
-        }
+        public bool Slot1ButtonEnabled => SlotExists(Resources.SlotData1);
 
         /// <summary>
-        /// Toggles whether the Slot 0 selection button is enabled or not depending on Slot 2's existence.
+        ///     Toggles whether the Slot 0 selection button is enabled or not depending on Slot 2's existence.
         /// </summary>
-        public bool Slot2ButtonEnabled {
-            get {
-                return SlotExists(Properties.Resources.SlotData2);
-            }
-        }
+        public bool Slot2ButtonEnabled => SlotExists(Resources.SlotData2);
 
         /// <summary>
-        /// Toggle visibility based on whether a slot has been selected or not.
+        ///     Toggle visibility based on whether a slot has been selected or not.
         /// </summary>
-        public Visibility SlotsUcVisibility {
-            get {
-                return slotsUcVisibility;
-            }
-            set {
+        public Visibility SlotsUcVisibility
+        {
+            get => slotsUcVisibility;
+            set
+            {
                 if (slotsUcVisibility != value)
                 {
                     slotsUcVisibility = value;
@@ -139,13 +129,13 @@ namespace YuMi.NieRexper.UI.Main
         }
 
         /// <summary>
-        /// Toggle visibility based on whether a slot has been selected or not.
+        ///     Toggle visibility based on whether a slot has been selected or not.
         /// </summary>
-        public Visibility LevelsUcVisibility {
-            get {
-                return levelsUcVisibility;
-            }
-            set {
+        public Visibility LevelsUcVisibility
+        {
+            get => levelsUcVisibility;
+            set
+            {
                 if (levelsUcVisibility != value)
                 {
                     levelsUcVisibility = value;
@@ -154,8 +144,10 @@ namespace YuMi.NieRexper.UI.Main
             }
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
-        /// Prompt the user with a dialogue window to choose their save slot and apply the specified EXP value.
+        ///     Prompt the user with a dialogue window to choose their save slot and apply the specified EXP value.
         /// </summary>
         /// <param name="amount">Amount of EXP to apply to the save slot the user will choose.</param>
         public void ApplyEXP(int amount)
@@ -163,7 +155,7 @@ namespace YuMi.NieRexper.UI.Main
             try
             {
                 main.PatchSlot(Path.Combine(SlotsDirectory, SlotFile), amount);
-                StatusText = Properties.Resources.StatusSuccess;
+                StatusText = Resources.StatusSuccess;
             }
             catch (Exception e)
             {
@@ -172,14 +164,14 @@ namespace YuMi.NieRexper.UI.Main
         }
 
         /// <summary>
-        /// Calls ApplyEXP that with the CustomLevel's value as the argument.
+        ///     Calls ApplyEXP that with the CustomLevel's value as the argument.
         /// </summary>
         public void ApplyCustomLevel()
         {
             try
             {
-                ApplyEXP(new ExpCalculator().Calculate((int)CustomLevel));
-                StatusText = Properties.Resources.StatusSuccess;
+                ApplyEXP(new ExpCalculator().Calculate((int) CustomLevel));
+                StatusText = Resources.StatusSuccess;
             }
             catch (Exception e)
             {
@@ -188,7 +180,7 @@ namespace YuMi.NieRexper.UI.Main
         }
 
         /// <summary>
-        /// Checks the NieR:Automata saves (slots) directory for the existence of the specified slot file.
+        ///     Checks the NieR:Automata saves (slots) directory for the existence of the specified slot file.
         /// </summary>
         /// <param name="slot">Slot file to check, e.g. SlotData_0.dat</param>
         /// <returns>Provided slot file exists on the filesystem.</returns>
@@ -196,8 +188,6 @@ namespace YuMi.NieRexper.UI.Main
         {
             return File.Exists(Path.Combine(SlotsDirectory, slot));
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
         {
