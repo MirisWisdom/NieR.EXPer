@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuMi.NieRexper.UI", "YuMi.NieRexper.UI\YuMi.NieRexper.UI.csproj", "{390664BD-4CB7-48B7-B3EE-D153A54FDBCB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuMi.NieRexper", "YuMi.NieRexper\YuMi.NieRexper.csproj", "{F13F25D9-4DF8-4193-ADB5-32486EB9ED9A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuMi.NieRexper.Test", "YuMi.NieRexper.Test\YuMi.NieRexper.Test.csproj", "{B2AE6DBB-B2F5-4544-8AFD-D49626B2BFE4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "YuMi.NieRexper.Docs", "YuMi.NieRexper.Docs", "{4E580358-2238-4027-AEED-55D9EBD78629}"
 ProjectSection(SolutionItems) = preProject
@@ -15,24 +11,22 @@ ProjectSection(SolutionItems) = preProject
 	..\README.md = ..\README.md
 EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuMi.NieRexper.Tests", "YuMi.NieRexper.Tests\YuMi.NieRexper.Tests.csproj", "{02A0E39D-9A1D-4432-A527-FAA0E345A701}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{390664BD-4CB7-48B7-B3EE-D153A54FDBCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{390664BD-4CB7-48B7-B3EE-D153A54FDBCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{390664BD-4CB7-48B7-B3EE-D153A54FDBCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{390664BD-4CB7-48B7-B3EE-D153A54FDBCB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F13F25D9-4DF8-4193-ADB5-32486EB9ED9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F13F25D9-4DF8-4193-ADB5-32486EB9ED9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F13F25D9-4DF8-4193-ADB5-32486EB9ED9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F13F25D9-4DF8-4193-ADB5-32486EB9ED9A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B2AE6DBB-B2F5-4544-8AFD-D49626B2BFE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2AE6DBB-B2F5-4544-8AFD-D49626B2BFE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B2AE6DBB-B2F5-4544-8AFD-D49626B2BFE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B2AE6DBB-B2F5-4544-8AFD-D49626B2BFE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02A0E39D-9A1D-4432-A527-FAA0E345A701}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02A0E39D-9A1D-4432-A527-FAA0E345A701}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02A0E39D-9A1D-4432-A527-FAA0E345A701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02A0E39D-9A1D-4432-A527-FAA0E345A701}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

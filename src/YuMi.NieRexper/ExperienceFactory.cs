@@ -1,30 +1,9 @@
-﻿/**
- * Copyright (C) 2018-2019 Emilian Roman
- * 
- * This file is part of NieR.EXPer.
- * 
- * NieR.EXPer is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * NieR.EXPer is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with NieR.EXPer.  If not, see <http://www.gnu.org/licenses/>.
- */
-
-using System;
-
 namespace YuMi.NieRexper
 {
     /// <summary>
-    ///     Handles the calculation of EXP points for a specified NieR:Automata level.
+    ///     Builds Experience objects.
     /// </summary>
-    public class Calculator
+    public class ExperienceFactory
     {
         /// <summary>
         ///     Array of EXPs that correspond to levels 1-99.
@@ -44,17 +23,20 @@ namespace YuMi.NieRexper
         };
 
         /// <summary>
-        ///     Returns the number of EXP points required for the level provided as an argument.
+        ///     Retrieves Experience object from given Level instance.
         /// </summary>
         /// <param name="level">
-        ///    The level to get the required EXP value for.
+        ///     NieR:Automata level which will essentially be represented as EXP points.
         /// </param>
         /// <returns>
-        ///    The EXP required for the provided level.
+        ///     Experience object representing the inbound Level.
         /// </returns>
-        public int Calculate(Level level)
+        public static Experience FromLevel(Level level)
         {
-            return Values[level - 1];
+            return new Experience
+            {
+                Points = Values[level.Value - 1]
+            };
         }
     }
 }
