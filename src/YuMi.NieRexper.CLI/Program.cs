@@ -17,7 +17,8 @@
  * along with NieR.EXPer.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-﻿using System;
+using System;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace YuMi.NieRexper.CLI
@@ -39,7 +40,10 @@ namespace YuMi.NieRexper.CLI
                     var levelExp = ExperienceFactory.FromLevel((Level) int.Parse(args[0]));
                     Console.WriteLine($"Infer points value: [{levelExp.Points}] <= [{args[0]}]");
 
-                    var saveSloth = (Slot) args[1];
+                    var personal = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+                    var fullPath = Path.Combine(personal, "My Games", "NieR_Automata", $"SlotData_{args[1]}.dat");
+
+                    var saveSloth = (Slot) fullPath;
                     Console.WriteLine($"Patching save slot: [{saveSloth.Path}] <= [{levelExp.Points}]");
 
                     new ExperienceRepository(saveSloth).Save(levelExp);
