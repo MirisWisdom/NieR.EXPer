@@ -14,6 +14,34 @@
     <Window.DataContext>
         <gui:Main />
     </Window.DataContext>
+    <Window.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+            <Setter Property="Background" Value="#4C4D493E" />
+            <Setter Property="Foreground" Value="#4d493e" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}"
+                                Padding="0,5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#4d493e" />
+                    <Setter Property="Foreground" Value="#c8c2aa" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Background" Value="#4C4D493E" />
+            <Setter Property="Foreground" Value="#4d493e" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+    </Window.Resources>
     <TabControl x:Name="MainTabControl"
                 Width="180"
                 VerticalAlignment="Center">
@@ -29,7 +57,8 @@
                 <Button Content="Data Save Slot 00"
                         Click="SetSaveSlot00" />
                 <Button Content="Data Save Slot 01"
-                        Click="SetSaveSlot01" />
+                        Click="SetSaveSlot01"
+                        Margin="0,5" />
                 <Button Content="Data Save Slot 02"
                         Click="SetSaveSlot02" />
             </StackPanel>
@@ -50,7 +79,8 @@
 
                 <!-- Set Custom Level -->
                 <Separator />
-                <TextBox Text="{Binding ExpLevel}" />
+                <TextBox Text="{Binding ExpLevel}"
+                         HorizontalContentAlignment="Center" />
                 <Button Content="Set Custom Level"
                         Click="SetCustomExpLevel" />
 
