@@ -49,21 +49,32 @@ namespace YuMi.NieRexper
         }
 
         /// <summary>
-        ///     Serialise Experience object to the given Slot file.
+        ///     Saves the EXP points to the save Slot. The Slot is backed up in advance, unless overriden.
         /// </summary>
         /// <param name="experience">
         ///     Experience object to serialise.
         /// </param>
-        public void Save(Experience experience)
+        /// <param name="backupSlot">
+        ///     Creates a backup of the slot file before patching it.
+        /// </param>
+        public void Save(Experience experience, bool backupSlot = true)
         {
             if (!File.Exists(_slot))
                 throw new FileNotFoundException("Slot not found.");
 
-            BackupSave();
-            SavePoints(experience);
+            if (backupSlot)
+                BackupSlot();
+
+            PatchValue(experience);
         }
 
-        private void SavePoints(Experience experience)
+        /// <summary>
+        ///     Patches the EXP to the Slot binary.
+        /// </summary>
+        /// <param name="experience">
+        ///     Experience object containing the EXP points to patch.
+        /// </param>
+        private void PatchValue(Experience experience)
         {
             using (var writer = new BinaryWriter(File.OpenWrite(_slot)))
             {
@@ -73,7 +84,11 @@ namespace YuMi.NieRexper
             }
         }
 
-        private void BackupSave()
+        /// <summary>
+        ///     Copies the save slot to a backup directory. The backup directory is a GUID-named subdirectory within the
+        ///     "NieR.EXPer" directory, which in turn is located in the same directory as the save slot.
+        /// </summary>
+        private void BackupSlot()
         {
             var slotFileName = Path.GetFileName(_slot)
                                ?? throw new FormatException("Cannot infer file name from Slot path.");
