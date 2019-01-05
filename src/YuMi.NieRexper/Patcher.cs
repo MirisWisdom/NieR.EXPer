@@ -25,13 +25,13 @@ namespace YuMi.NieRexper
     /// <summary>
     ///     EXP patcher for NieR:Automata save slots.
     /// </summary>
-    public class SlotPatcher
+    public class Patcher
     {
         /// <summary>
         ///     SlotPatcher constructor.
         /// </summary>
         /// <param name="slotPath">Path of the NieR:Automata save slot to patch.</param>
-        public SlotPatcher(string slotPath)
+        public Patcher(string slotPath)
         {
             SlotPath = slotPath;
         }

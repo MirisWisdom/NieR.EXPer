@@ -170,7 +170,7 @@ namespace YuMi.NieRexper.UI.Main
         {
             try
             {
-                ApplyEXP(new ExpCalculator().Calculate((int) CustomLevel));
+                ApplyEXP(new Calculator().Calculate((NieRexper.Level) (int) CustomLevel));
                 StatusText = Resources.StatusSuccess;
             }
             catch (Exception e)

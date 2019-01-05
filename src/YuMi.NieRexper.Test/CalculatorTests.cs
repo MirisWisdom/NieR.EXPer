@@ -22,42 +22,42 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace YuMi.NieRexper.Test
 {
     [TestClass]
-    public class ExpCalculateTest
+    public class CalculatorTests
     {
         [TestMethod]
         public void ProvideLevel1_CorrectExpIsReturned_True()
         {
-            Assert.IsTrue(new ExpCalculator().Calculate(1) == 0);
+            Assert.IsTrue(new Calculator().Calculate((Level) 1) == 0);
         }
 
         [TestMethod]
         public void ProvideLevel10_CorrectExpIsReturned_True()
         {
-            Assert.IsTrue(new ExpCalculator().Calculate(10) == 3184);
+            Assert.IsTrue(new Calculator().Calculate((Level) 10) == 3184);
         }
 
         [TestMethod]
         public void ProvideLevel25_CorrectExpIsReturned_True()
         {
-            Assert.IsTrue(new ExpCalculator().Calculate(25) == 34493);
+            Assert.IsTrue(new Calculator().Calculate((Level) 25) == 34493);
         }
 
         [TestMethod]
         public void ProvideLevel50_CorrectExpIsReturned_True()
         {
-            Assert.IsTrue(new ExpCalculator().Calculate(50) == 209127);
+            Assert.IsTrue(new Calculator().Calculate((Level) 50) == 209127);
         }
 
         [TestMethod]
         public void ProvideLevel75_CorrectExpIsReturned_True()
         {
-            Assert.IsTrue(new ExpCalculator().Calculate(75) == 600135);
+            Assert.IsTrue(new Calculator().Calculate((Level) 75) == 600135);
         }
 
         [TestMethod]
         public void ProvideLevel99_CorrectExpIsReturned_True()
         {
-            Assert.IsTrue(new ExpCalculator().Calculate(99) == 1235211);
+            Assert.IsTrue(new Calculator().Calculate((Level) 99) == 1235211);
         }
     }
 }

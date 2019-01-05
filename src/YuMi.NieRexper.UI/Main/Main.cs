@@ -30,22 +30,22 @@ namespace YuMi.NieRexper.UI.Main
         /// <summary>
         ///     EXP required to reach level 10.
         /// </summary>
-        public static int Level10 => new ExpCalculator().Calculate(10);
+        public static int Level10 => new Calculator().Calculate((NieRexper.Level) 10);
 
         /// <summary>
         ///     EXP required to reach level 25.
         /// </summary>
-        public static int Level25 => new ExpCalculator().Calculate(25);
+        public static int Level25 => new Calculator().Calculate((NieRexper.Level) 25);
 
         /// <summary>
         ///     EXP required to reach level 50.
         /// </summary>
-        public static int Level50 => new ExpCalculator().Calculate(50);
+        public static int Level50 => new Calculator().Calculate((NieRexper.Level) 50);
 
         /// <summary>
         ///     EXP required to reach level 75.
         /// </summary>
-        public static int Level75 => new ExpCalculator().Calculate(75);
+        public static int Level75 => new Calculator().Calculate((NieRexper.Level) 75);
 
         /// <summary>
         ///     Apply experience points to the specified save file.
@@ -55,7 +55,7 @@ namespace YuMi.NieRexper.UI.Main
         public void PatchSlot(string slotName, int amount)
         {
             File.Copy(slotName, GetUniqueSlotName(slotName), true);
-            new SlotPatcher(slotName).Patch(amount);
+            new Patcher(slotName).Patch(amount);
         }
 
         /// <summary>

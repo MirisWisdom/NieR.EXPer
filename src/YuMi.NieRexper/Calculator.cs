@@ -24,12 +24,12 @@ namespace YuMi.NieRexper
     /// <summary>
     ///     Handles the calculation of EXP points for a specified NieR:Automata level.
     /// </summary>
-    public class ExpCalculator
+    public class Calculator
     {
         /// <summary>
         ///     Array of EXPs that correspond to levels 1-99.
         /// </summary>
-        private readonly int[] expValues =
+        private static readonly int[] Values =
         {
             0x000000, 0x000030, 0x00008B, 0x000126, 0x00020D, 0x00034B, 0x0004EB, 0x0006F6, 0x000975, 0x000C70,
             0x000FF0, 0x0013FC, 0x00189C, 0x001DD6, 0x0023B3, 0x002A39, 0x00316E, 0x00395A, 0x004202, 0x004B6D,
@@ -46,15 +46,15 @@ namespace YuMi.NieRexper
         /// <summary>
         ///     Returns the number of EXP points required for the level provided as an argument.
         /// </summary>
-        /// <param name="value">The level to get the required EXP value for.</param>
-        /// <returns>The EXP required for the provided level.</returns>
-        /// <exception cref="IndexOutOfRangeException">Value is under 1 or over 99.</exception>
-        public int Calculate(int value)
+        /// <param name="level">
+        ///    The level to get the required EXP value for.
+        /// </param>
+        /// <returns>
+        ///    The EXP required for the provided level.
+        /// </returns>
+        public int Calculate(Level level)
         {
-            if (value < 1 || value > 99)
-                throw new IndexOutOfRangeException($"Expected value >=1 && <=99; {value} given.");
-
-            return expValues[value - 1];
+            return Values[level - 1];
         }
     }
 }
