@@ -5,15 +5,17 @@ VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuMi.NieRexper", "YuMi.NieRexper\YuMi.NieRexper.csproj", "{F13F25D9-4DF8-4193-ADB5-32486EB9ED9A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "YuMi.NieRexper.Docs", "YuMi.NieRexper.Docs", "{4E580358-2238-4027-AEED-55D9EBD78629}"
-ProjectSection(SolutionItems) = preProject
-	..\LICENSE = ..\LICENSE
-	..\README.md = ..\README.md
-EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuMi.NieRexper.Tests", "YuMi.NieRexper.Tests\YuMi.NieRexper.Tests.csproj", "{02A0E39D-9A1D-4432-A527-FAA0E345A701}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuMi.NieRexper.CLI", "YuMi.NieRexper.CLI\YuMi.NieRexper.CLI.csproj", "{0C0E53F1-EF7B-4D48-8F95-C1B909BE2566}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{1B7A54AE-56C2-4A11-8F16-AEAC7EAB597E}"
+	ProjectSection(SolutionItems) = preProject
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuMi.NieRexper.GUI", "YuMi.NieRexper.GUI\YuMi.NieRexper.GUI.csproj", "{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0C0E53F1-EF7B-4D48-8F95-C1B909BE2566}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C0E53F1-EF7B-4D48-8F95-C1B909BE2566}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C0E53F1-EF7B-4D48-8F95-C1B909BE2566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

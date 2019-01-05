@@ -1,0 +1,53 @@
+﻿<controls:MetroWindow x:Class="YuMi.NieRexper.GUI.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:gui="clr-namespace:YuMi.NieRexper.GUI"
+                      SizeToContent="WidthAndHeight"
+                      WindowStartupLocation="CenterScreen"
+                      ResizeMode="CanMinimize"
+                      SnapsToDevicePixels="True">
+    <Window.DataContext>
+        <gui:Main />
+    </Window.DataContext>
+    <TabControl x:Name="MainTabControl">
+        <!-- Save Slot -->
+        <TabItem x:Name="SaveSlotTabItem">
+            <StackPanel>
+                <Button Content="Save Slot 00"
+                        Click="SetSaveSlot00" />
+                <Button Content="Save Slot 01"
+                        Click="SetSaveSlot01" />
+                <Button Content="Save Slot 02"
+                        Click="SetSaveSlot02" />
+            </StackPanel>
+        </TabItem>
+
+        <!-- EXP Level -->
+        <TabItem x:Name="ExpLevelTabItem">
+            <StackPanel>
+                <!-- Level Selection -->
+                <Button Content="EXP Level 10"
+                        Click="SetExpLevel10" />
+                <Button Content="EXP Level 25"
+                        Click="SetExpLevel25" />
+                <Button Content="EXP Level 50"
+                        Click="SetExpLevel50" />
+                <Button Content="EXP Level 75"
+                        Click="SetExpLevel75" />
+
+                <!-- Set Custom Level -->
+                <Separator />
+                <TextBox Text="{Binding ExpLevel}" />
+                <Button Content="Set Custom EXP Level"
+                        Click="SetCustomExpLevel" />
+
+                <!-- Session Details -->
+                <Separator />
+                <Label Content="{Binding SaveSlot}" />
+                <Separator />
+                <Label Content="{Binding Status}" />
+            </StackPanel>
+        </TabItem>
+    </TabControl>
+</controls:MetroWindow>
