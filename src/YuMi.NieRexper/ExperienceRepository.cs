@@ -37,12 +37,35 @@ namespace YuMi.NieRexper
         /// </param>
         public void Save(Experience experience)
         {
+            if (File.Exists(_save))
+                throw new FileNotFoundException("Slot not found.");
+
+            BackupSave();
+            SavePoints(experience);
+        }
+
+        private void SavePoints(Experience experience)
+        {
             using (var writer = new BinaryWriter(File.OpenWrite(_save)))
             {
                 var points = BitConverter.GetBytes(experience.Points);
                 writer.BaseStream.Seek(LevelOffset, SeekOrigin.Begin);
                 writer.Write(points, 0, points.Length);
             }
+        }
+
+        private void BackupSave()
+        {
+            var slotFileName = Path.GetFileName(_save)
+                               ?? throw new FormatException("Cannot infer file name from Save path.");
+
+            var sourceFolder = Path.GetDirectoryName(_save)
+                               ?? throw new FormatException("Cannot infer directory from Save path.");
+
+            var backupFolder = Path.Combine(sourceFolder, $"NieR.EXPer-{Guid.NewGuid()}");
+
+            Directory.CreateDirectory(backupFolder);
+            File.Copy(_save, Path.Combine(backupFolder, slotFileName));
         }
     }
 }
