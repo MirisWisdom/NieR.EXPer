@@ -17,6 +17,8 @@
  * along with NieR.EXPer.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using MahApps.Metro.Controls;
 
@@ -81,7 +83,12 @@ namespace YuMi.NieRexper.GUI
         private void SetExpLevel(int level)
         {
             _main.ExpLevel = level;
-            _main.SaveData();
+            Task.Run(() =>
+            {
+                _main.SaveData(); 
+                Thread.Sleep(2500);
+                _main.Status = "PENDING";
+            });
         }
 
         private void SetCustomExpLevel(object sender, RoutedEventArgs e)
