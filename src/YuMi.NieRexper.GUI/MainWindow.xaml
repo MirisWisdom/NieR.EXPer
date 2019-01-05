@@ -23,11 +23,11 @@
                        RenderOptions.BitmapScalingMode="NearestNeighbor"
                        Margin="0,0,0,20" />
 
-                <Button Content="Save Slot 00"
+                <Button Content="Data Save Slot 00"
                         Click="SetSaveSlot00" />
-                <Button Content="Save Slot 01"
+                <Button Content="Data Save Slot 01"
                         Click="SetSaveSlot01" />
-                <Button Content="Save Slot 02"
+                <Button Content="Data Save Slot 02"
                         Click="SetSaveSlot02" />
             </StackPanel>
         </TabItem>
@@ -36,19 +36,19 @@
         <TabItem x:Name="ExpLevelTabItem">
             <StackPanel>
                 <!-- Level Selection -->
-                <Button Content="EXP Level 10"
+                <Button Content="Set EXP to Level 10"
                         Click="SetExpLevel10" />
-                <Button Content="EXP Level 25"
+                <Button Content="Set EXP to Level 25"
                         Click="SetExpLevel25" />
-                <Button Content="EXP Level 50"
+                <Button Content="Set EXP to Level 50"
                         Click="SetExpLevel50" />
-                <Button Content="EXP Level 75"
+                <Button Content="Set EXP to Level 75"
                         Click="SetExpLevel75" />
 
                 <!-- Set Custom Level -->
                 <Separator />
                 <TextBox Text="{Binding ExpLevel}" />
-                <Button Content="Set Custom EXP Level"
+                <Button Content="Set Custom Level"
                         Click="SetCustomExpLevel" />
 
                 <!-- Session Details -->
