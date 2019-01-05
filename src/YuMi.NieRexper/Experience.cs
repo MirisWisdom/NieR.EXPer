@@ -19,6 +19,9 @@
 
 namespace YuMi.NieRexper
 {
+    /// <summary>
+    ///     Represents a NieR:Automata experience points (EXP).
+    /// </summary>
     public class Experience
     {
         /// <summary>
