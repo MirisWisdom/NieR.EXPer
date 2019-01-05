@@ -10,11 +10,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YuMi.NieRexper.Test", "YuMi.NieRexper.Test\YuMi.NieRexper.Test.csproj", "{B2AE6DBB-B2F5-4544-8AFD-D49626B2BFE4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "YuMi.NieRexper.Docs", "YuMi.NieRexper.Docs", "{4E580358-2238-4027-AEED-55D9EBD78629}"
-	ProjectSection(SolutionItems) = preProject
-		LICENSE = LICENSE
-		README.md = README.md
-		Screenshot.png = Screenshot.png
-	EndProjectSection
+ProjectSection(SolutionItems) = preProject
+	..\LICENSE = ..\LICENSE
+	..\README.md = ..\README.md
+EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
