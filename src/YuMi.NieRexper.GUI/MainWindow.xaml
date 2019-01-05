@@ -3,17 +3,26 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
                       xmlns:gui="clr-namespace:YuMi.NieRexper.GUI"
-                      SizeToContent="WidthAndHeight"
+                      Width="240"
+                      Height="360"
                       WindowStartupLocation="CenterScreen"
                       ResizeMode="CanMinimize"
                       SnapsToDevicePixels="True">
     <Window.DataContext>
         <gui:Main />
     </Window.DataContext>
-    <TabControl x:Name="MainTabControl">
+    <TabControl x:Name="MainTabControl"
+                Width="180"
+                VerticalAlignment="Center">
         <!-- Save Slot -->
         <TabItem x:Name="SaveSlotTabItem">
             <StackPanel>
+                <Image Source="/logo.png"
+                       Stretch="None"
+                       SnapsToDevicePixels="True"
+                       RenderOptions.BitmapScalingMode="NearestNeighbor"
+                       Margin="0,0,0,20" />
+
                 <Button Content="Save Slot 00"
                         Click="SetSaveSlot00" />
                 <Button Content="Save Slot 01"
@@ -44,9 +53,17 @@
 
                 <!-- Session Details -->
                 <Separator />
-                <Label Content="{Binding SaveSlot}" />
+                <DockPanel>
+                    <Label Content="Save Slot" />
+                    <Label Content="{Binding SaveSlot}"
+                           HorizontalAlignment="Right" />
+                </DockPanel>
                 <Separator />
-                <Label Content="{Binding Status}" />
+                <DockPanel>
+                    <Label Content="Status" />
+                    <Label Content="{Binding Status}"
+                           HorizontalAlignment="Right" />
+                </DockPanel>
             </StackPanel>
         </TabItem>
     </TabControl>
