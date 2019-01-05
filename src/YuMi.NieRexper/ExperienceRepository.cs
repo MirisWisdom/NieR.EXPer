@@ -37,7 +37,7 @@ namespace YuMi.NieRexper
         /// </param>
         public void Save(Experience experience)
         {
-            if (File.Exists(_slot))
+            if (!File.Exists(_slot))
                 throw new FileNotFoundException("Slot not found.");
 
             BackupSave();
@@ -62,7 +62,7 @@ namespace YuMi.NieRexper
             var sourceFolder = Path.GetDirectoryName(_slot)
                                ?? throw new FormatException("Cannot infer directory from Slot path.");
 
-            var backupFolder = Path.Combine(sourceFolder, $"NieR.EXPer-{Guid.NewGuid()}");
+            var backupFolder = Path.Combine(sourceFolder, "NieR.EXPer", Guid.NewGuid().ToString());
 
             Directory.CreateDirectory(backupFolder);
             File.Copy(_slot, Path.Combine(backupFolder, slotFileName));
