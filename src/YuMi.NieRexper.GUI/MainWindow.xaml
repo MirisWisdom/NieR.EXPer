@@ -4,10 +4,13 @@
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
                       xmlns:gui="clr-namespace:YuMi.NieRexper.GUI"
                       Width="240"
-                      Height="360"
+                      Height="480"
                       WindowStartupLocation="CenterScreen"
                       ResizeMode="CanMinimize"
                       SnapsToDevicePixels="True">
+    <controls:MetroWindow.Background>
+        <ImageBrush ImageSource="Resources/Background.png" Stretch="None" />
+    </controls:MetroWindow.Background>
     <Window.DataContext>
         <gui:Main />
     </Window.DataContext>
@@ -17,7 +20,7 @@
         <!-- Save Slot -->
         <TabItem x:Name="SaveSlotTabItem">
             <StackPanel>
-                <Image Source="/logo.png"
+                <Image Source="/Resources/Logo.png"
                        Stretch="None"
                        SnapsToDevicePixels="True"
                        RenderOptions.BitmapScalingMode="NearestNeighbor"
