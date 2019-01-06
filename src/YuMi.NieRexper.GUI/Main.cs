@@ -20,6 +20,7 @@
 using System;
 using System.ComponentModel;
 using System.IO;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using YuMi.NieRexper.GUI.Annotations;
 
@@ -44,6 +45,20 @@ namespace YuMi.NieRexper.GUI
         ///     <see cref="Status" />
         /// </summary>
         private string _status = "PENDING";
+
+        /// <summary>
+        ///     Returns data from the VERSION file.
+        /// </summary>
+        public string Version
+        {
+            get
+            {
+                var assembly = Assembly.GetExecutingAssembly();
+                using (var stream = assembly.GetManifestResourceStream("YuMi.NieRexper.GUI.VERSION"))
+                using (var reader = new StreamReader(stream))
+                    return reader.ReadToEnd().TrimEnd();
+            }
+        }
 
         /// <summary>
         ///     Selected save slot.
