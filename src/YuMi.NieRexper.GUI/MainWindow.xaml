@@ -15,9 +15,16 @@
         <gui:Main />
     </Window.DataContext>
     <Window.Resources>
+        <SolidColorBrush x:Key="YoRHaLite"
+                         Color="#C8C2AA"/>
+        <SolidColorBrush x:Key="YoRHaDark"
+                         Color="#4D493E"/>
+        <SolidColorBrush x:Key="YoRHaDark30"
+                         Color="#4C4D493E"/>
+
         <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
-            <Setter Property="Background" Value="#4C4D493E" />
-            <Setter Property="Foreground" Value="#4d493e" />
+            <Setter Property="Background" Value="{StaticResource YoRHaDark30}" />
+            <Setter Property="Foreground" Value="{StaticResource YoRHaDark}" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -30,15 +37,15 @@
             </Setter>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#4d493e" />
-                    <Setter Property="Foreground" Value="#c8c2aa" />
+                    <Setter Property="Background" Value="{StaticResource YoRHaDark}" />
+                    <Setter Property="Foreground" Value="{StaticResource YoRHaLite}" />
                 </Trigger>
             </Style.Triggers>
         </Style>
 
         <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
-            <Setter Property="Background" Value="#4C4D493E" />
-            <Setter Property="Foreground" Value="#4d493e" />
+            <Setter Property="Background" Value="{StaticResource YoRHaDark30}" />
+            <Setter Property="Foreground" Value="{StaticResource YoRHaDark}" />
             <Setter Property="BorderThickness" Value="0" />
         </Style>
     </Window.Resources>
@@ -54,6 +61,9 @@
                        RenderOptions.BitmapScalingMode="NearestNeighbor"
                        Margin="0,0,0,20" />
 
+                <Label Content="⸻ select save ⸻"
+                       Foreground="#4d493e"
+                       HorizontalAlignment="Center" />
                 <Button Content="Data Save Slot 00"
                         Click="SetSaveSlot00"
                         IsEnabled="{Binding CanSetSlot0}" />
@@ -69,37 +79,63 @@
 
         <!-- EXP Level -->
         <TabItem x:Name="ExpLevelTabItem">
+
             <StackPanel>
                 <!-- Level Selection -->
+                <Label Content="⸻ select level ⸻"
+                       Foreground="#4d493e"
+                       HorizontalAlignment="Center" />
+
                 <Button Content="Set EXP to Level 10"
                         Click="SetExpLevel10" />
                 <Button Content="Set EXP to Level 25"
-                        Click="SetExpLevel25" />
+                        Click="SetExpLevel25"
+                        Margin="0,1,0,0" />
                 <Button Content="Set EXP to Level 50"
-                        Click="SetExpLevel50" />
+                        Click="SetExpLevel50"
+                        Margin="0,1,0,0" />
                 <Button Content="Set EXP to Level 75"
-                        Click="SetExpLevel75" />
+                        Click="SetExpLevel75"
+                        Margin="0,1,0,0" />
 
                 <!-- Set Custom Level -->
-                <Separator />
+                <Label Content="⸻ custom level ⸻"
+                       Foreground="#4d493e"
+                       HorizontalAlignment="Center"
+                       Margin="0,10,0,0" />
                 <TextBox Text="{Binding ExpLevel}"
                          HorizontalContentAlignment="Center" />
                 <Button Content="Set Custom Level"
-                        Click="SetCustomExpLevel" />
+                        Click="SetCustomExpLevel"
+                        Margin="0,1,0,0" />
 
                 <!-- Session Details -->
-                <Separator />
-                <DockPanel>
-                    <Label Content="Save Slot" />
-                    <Label Content="{Binding SaveSlot}"
-                           HorizontalAlignment="Right" />
-                </DockPanel>
-                <Separator />
-                <DockPanel>
-                    <Label Content="Status" />
-                    <Label Content="{Binding Status}"
-                           HorizontalAlignment="Right" />
-                </DockPanel>
+                <Label Content="⸻ information ⸻"
+                       Foreground="#4d493e"
+                       HorizontalAlignment="Center"
+                       Margin="0,10,0,0" />
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <Style TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
+                            <Setter Property="Background" Value="{StaticResource YoRHaDark30}" />
+                            <Setter Property="Foreground" Value="{StaticResource YoRHaDark}" />
+                            <Setter Property="BorderThickness" Value="0" />
+                        </Style>
+                    </StackPanel.Resources>
+                    <!-- Slot -->
+                    <DockPanel>
+                        <Label Content="Save Slot" />
+                        <Label Content="{Binding SaveSlot}"
+                               HorizontalContentAlignment="Right" />
+                    </DockPanel>
+
+                    <!-- Status -->
+                    <DockPanel Margin="0,1,0,0">
+                        <Label Content="Status" />
+                        <Label Content="{Binding Status}"
+                               HorizontalContentAlignment="Right" />
+                    </DockPanel>
+                </StackPanel>
             </StackPanel>
         </TabItem>
     </TabControl>
