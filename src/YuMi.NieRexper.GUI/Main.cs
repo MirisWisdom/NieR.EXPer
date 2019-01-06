@@ -87,6 +87,21 @@ namespace YuMi.NieRexper.GUI
             }
         }
 
+        /// <summary>
+        ///     Slot 0 exists on the filesystem, therefore it can be set.
+        /// </summary>
+        public bool CanSetSlot0 => File.Exists(((Slot) 0).Path);
+
+        /// <summary>
+        ///     Slot 1 exists on the filesystem, therefore it can be set.
+        /// </summary>
+        public bool CanSetSlot1 => File.Exists(((Slot) 0).Path);
+        
+        /// <summary>
+        ///     Slot 2 exists on the filesystem, therefore it can be set.
+        /// </summary>
+        public bool CanSetSlot2 => File.Exists(((Slot) 0).Path);
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>

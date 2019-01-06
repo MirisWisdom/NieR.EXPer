@@ -55,12 +55,15 @@
                        Margin="0,0,0,20" />
 
                 <Button Content="Data Save Slot 00"
-                        Click="SetSaveSlot00" />
+                        Click="SetSaveSlot00"
+                        IsEnabled="{Binding CanSetSlot0}" />
                 <Button Content="Data Save Slot 01"
                         Click="SetSaveSlot01"
+                        IsEnabled="{Binding CanSetSlot1}"
                         Margin="0,5" />
                 <Button Content="Data Save Slot 02"
-                        Click="SetSaveSlot02" />
+                        Click="SetSaveSlot02"
+                        IsEnabled="{Binding CanSetSlot2}" />
             </StackPanel>
         </TabItem>
 
