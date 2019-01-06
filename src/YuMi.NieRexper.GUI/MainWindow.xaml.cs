@@ -17,6 +17,7 @@
  * along with NieR.EXPer.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -94,6 +95,11 @@ namespace YuMi.NieRexper.GUI
         private void SetCustomExpLevel(object sender, RoutedEventArgs e)
         {
             _main.SaveData();
+        }
+
+        private void About(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/yumiris/NieR.EXPer");
         }
     }
 }

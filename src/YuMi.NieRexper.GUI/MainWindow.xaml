@@ -11,9 +11,12 @@
     <controls:MetroWindow.Background>
         <ImageBrush ImageSource="Resources/Background.png" Stretch="None" />
     </controls:MetroWindow.Background>
+
     <Window.DataContext>
         <gui:Main />
     </Window.DataContext>
+    
+    <!-- Styles -->
     <Window.Resources>
         <SolidColorBrush x:Key="YoRHaLite"
                          Color="#C8C2AA"/>
@@ -49,6 +52,16 @@
             <Setter Property="BorderThickness" Value="0" />
         </Style>
     </Window.Resources>
+
+    <!-- Title -->
+    <controls:MetroWindow.RightWindowCommands>
+        <controls:WindowCommands>
+            <Button Content="about"
+                    Click="About"/>
+        </controls:WindowCommands>
+    </controls:MetroWindow.RightWindowCommands>
+
+    <!-- Body -->
     <TabControl x:Name="MainTabControl"
                 Width="180"
                 VerticalAlignment="Center">

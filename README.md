@@ -3,11 +3,14 @@
         NieR.EXPer
     </h1>
     <p align="center">
+        <img src="https://user-images.githubusercontent.com/10241434/50730794-c172cd80-1190-11e9-8918-6f704618c5fe.png">
+    </p>
+    <p align="center">
         Level Patcher for NieR:Automata
     </p>
 </html>
 
-# NieR.EXPer
+## Introduction
 
 This tool allows you to set a level of choice in your NieR:Automata profile!
 
