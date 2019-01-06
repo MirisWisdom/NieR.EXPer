@@ -40,11 +40,8 @@ namespace YuMi.NieRexper.CLI
                     var levelExp = ExperienceFactory.FromLevel((Level) int.Parse(args[0]));
                     Console.WriteLine($"Infer points value: [{levelExp.Points}] <= [{args[0]}]");
 
-                    var personal = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-                    var fullPath = Path.Combine(personal, "My Games", "NieR_Automata", $"SlotData_{args[1]}.dat");
-
-                    var saveSloth = (Slot) fullPath;
-                    Console.WriteLine($"Patching save slot: [{saveSloth.Path}] <= [{levelExp.Points}]");
+                    var saveSloth = (Slot) int.Parse(args[1]);
+                    Console.WriteLine($"Patching save slot: [{levelExp.Points}] => [{args[1]}]");
 
                     new ExperienceRepository(saveSloth).Save(levelExp);
                     Console.WriteLine($"Successfully saved: [{args[1]}] <= [{args[0]}]");

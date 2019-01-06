@@ -17,6 +17,8 @@
  * along with NieR.EXPer.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System;
+
 namespace YuMi.NieRexper
 {
     /// <summary>
@@ -25,38 +27,50 @@ namespace YuMi.NieRexper
     public class Slot
     {
         /// <summary>
-        ///     <see cref="Path" />
+        ///     Numeric identifier of the slot.
         /// </summary>
-        public string Path { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
-        ///     Represent object as string.
+        ///     Path of the Slot on the filesystem.
         /// </summary>
-        /// <param name="slot">
-        ///     Object to represent as string.
-        /// </param>
-        /// <returns>
-        ///     String representation of the object.
-        /// </returns>
-        public static implicit operator string(Slot slot)
+        public string Path
         {
-            return slot.Path;
+            get
+            {
+                var personal = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+                return System.IO.Path.Combine(personal, "My Games", "NieR_Automata", $"SlotData_{Id}.dat");
+            }
         }
 
         /// <summary>
-        ///     Represent string as object.
+        ///     Represent object as integer.
         /// </summary>
-        /// <param name="path">
-        ///     String to represent as object.
+        /// <param name="slot">
+        ///     Object to represent as integer.
         /// </param>
         /// <returns>
-        ///     Object representation of the string.
+        ///     Integer representation of the object.
         /// </returns>
-        public static explicit operator Slot(string path)
+        public static implicit operator int(Slot slot)
+        {
+            return slot.Id;
+        }
+
+        /// <summary>
+        ///     Represent integer as object.
+        /// </summary>
+        /// <param name="id">
+        ///     Integer to represent as object.
+        /// </param>
+        /// <returns>
+        ///     Object representation of the integer.
+        /// </returns>
+        public static explicit operator Slot(int id)
         {
             return new Slot
             {
-                Path = path
+                Id = id
             };
         }
     }

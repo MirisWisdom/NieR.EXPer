@@ -59,7 +59,7 @@ namespace YuMi.NieRexper
         /// </param>
         public void Save(Experience experience, bool backupSlot = true)
         {
-            if (!File.Exists(_slot))
+            if (!File.Exists(_slot.Path))
                 throw new FileNotFoundException("Slot not found.");
 
             if (backupSlot)
@@ -76,7 +76,7 @@ namespace YuMi.NieRexper
         /// </param>
         private void PatchValue(Experience experience)
         {
-            using (var writer = new BinaryWriter(File.OpenWrite(_slot)))
+            using (var writer = new BinaryWriter(File.OpenWrite(_slot.Path)))
             {
                 var points = BitConverter.GetBytes(experience.Points);
                 writer.BaseStream.Seek(LevelOffset, SeekOrigin.Begin);
@@ -90,16 +90,16 @@ namespace YuMi.NieRexper
         /// </summary>
         private void BackupSlot()
         {
-            var slotFileName = Path.GetFileName(_slot)
+            var slotFileName = Path.GetFileName(_slot.Path)
                                ?? throw new FormatException("Cannot infer file name from Slot path.");
 
-            var sourceFolder = Path.GetDirectoryName(_slot)
+            var sourceFolder = Path.GetDirectoryName(_slot.Path)
                                ?? throw new FormatException("Cannot infer directory from Slot path.");
 
             var backupFolder = Path.Combine(sourceFolder, "NieR.EXPer", Guid.NewGuid().ToString());
 
             Directory.CreateDirectory(backupFolder);
-            File.Copy(_slot, Path.Combine(backupFolder, slotFileName));
+            File.Copy(_slot.Path, Path.Combine(backupFolder, slotFileName));
         }
     }
 }

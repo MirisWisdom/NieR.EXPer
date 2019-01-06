@@ -96,13 +96,8 @@ namespace YuMi.NieRexper.GUI
         {
             try
             {
-                var personal = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-                var slotPath = Path.Combine(personal, "My Games", "NieR_Automata", $"SlotData_{SaveSlot}.dat");
-
                 var levelExp = ExperienceFactory.FromLevel((Level) ExpLevel);
-                var saveSloth = (Slot) slotPath;
-
-                new ExperienceRepository(saveSloth).Save(levelExp);
+                new ExperienceRepository((Slot) SaveSlot).Save(levelExp);
 
                 Status = "SUCCESS";
             }
