@@ -18,13 +18,22 @@
  */
 
 using System;
-using System.IO;
 using System.Threading.Tasks;
 
 namespace YuMi.NieRexper.CLI
 {
-    internal class Program
+    /// <summary>
+    ///     NieR.EXPer CLI
+    /// </summary>
+    internal static class Program
     {
+        /// <summary>
+        ///     CLI entry.
+        /// </summary>
+        /// <param name="args">
+        ///     [0] = Desired level (1..99)
+        ///     [1] = Save slot number (0..2)
+        /// </param>
         public static void Main(string[] args)
         {
             if (args.Length < 2)
