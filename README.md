@@ -14,10 +14,8 @@
 
 This tool allows you to set a level of choice in your NieR:Automata profile!
 
-Despite the game's brilliance, its levelling system is flawed in the sense of
-making the game too easy when your profile is at a high level. This tool aims
-to fix that, by letting you select a lower level and thus bringing back the
-challenge.
+This tool aims to fix the game's easiness when you are at a high level,
+by letting you select a lower level and thus bringing back the challenge.
 
 The process is completely safe and reversible - a backup of your save slot is
 made before the patch is applied.
